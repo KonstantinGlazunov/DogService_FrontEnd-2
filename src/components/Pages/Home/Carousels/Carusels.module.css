@@ -1,0 +1,28 @@
+.caruselimgwrap {
+    display: flex;
+    /* flex-wrap: wrap; */
+    min-width: 100%;
+}
+
+.caruselimgwrap img{
+    justify-content: center;
+    max-width: 25%;
+    margin-right: 1%;
+    height: auto;
+}
+
+@media screen and (max-width: 991px) {
+
+    .caruselimgwrap {
+        flex-wrap: wrap;
+    }
+    .caruselimgwrap img{
+        justify-content: center;
+        min-width: 48%;
+        margin: 1%;
+        height: auto;
+    }
+
+}
+
+

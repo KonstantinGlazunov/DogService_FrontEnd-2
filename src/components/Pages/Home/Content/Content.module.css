@@ -1,0 +1,8 @@
+.content {
+    display: flex;
+    justify-content:space-between;
+    min-width: 100px;
+    height: 900px;
+    background-color: rgb(245, 242, 239);
+    margin: 15px auto;
+}
