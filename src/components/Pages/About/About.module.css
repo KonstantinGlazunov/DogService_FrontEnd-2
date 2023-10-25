@@ -1,0 +1,72 @@
+.pageClassName {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(./img/Dog3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: changing 10s infinite;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    transform: translate(-50% -50%);
+    text-align: center;
+    
+}
+.pageClassName h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    /* color: transparent;
+    background: url(https://media.giphy.com/media/30pjsLvNyaRY0eoE0b/giphy.gif);
+    -webkit-background-clip: text; */
+}
+
+
+.descr p {
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(249, 242, 242);
+    /* color:transparent;
+    background: url(https://media.giphy.com/media/3og0IQ29pE7zRwbh60/giphy.gif);
+    -webkit-background-clip: text; */
+   
+}
+.container a {
+    background: #612a16;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    border-radius: 25px;
+}
+
+@keyframes changing {
+    0% {
+        background-image: url(./img/Dog3.png)
+    }
+    35% {
+        background-image: url(./img/Dog6.png)
+    }
+    68% {
+        background-image: url(./img/Dog1.png)
+    }
+    68% {
+        background-image: url(./img/Dog4.png)
+    }
+}
+@media (max-width: 768px) {
+    .pageClassName {
+        background-image: url(./img/mobile-background.png); /* Замените на изображение для мобильной версии */
+        background-size: cover;
+    }
+    .container {
+        width: 100%;
+    }
+    .container a {
+        font-size: 16px; /* Увеличьте размер шрифта для мобильной версии */
+    }
+}
