@@ -10,22 +10,22 @@ function Carousels() {
           
                     <img
                         className="d-block w-100"
-                        src="/images/dog_1.png"
+                        src="/dog_1.png"
                         alt="dog_1"
                     />
                     <img
                         className="d-block w-100"
-                        src="/images/dog_2.png"
+                        src="/dog_2.png"
                         alt="dog_2"
                     />
                     <img
                         className="d-block w-100"
-                        src="/images/dog_3.png"
+                        src="/dog_3.png"
                         alt="dog_3"
                     />
                     <img
                         className="d-block w-100"
-                        src="/images/dog_4.png"
+                        src="/dog_4.png"
                         alt="dog_4"
                     />
 
@@ -42,22 +42,22 @@ function Carousels() {
             
             <img
                 className="d-block w-100"
-                src="/images/dog_5.png"
+                src="/dog_5.png"
                 alt="dog_5"
             />
             <img
                 className="d-block w-100"
-                src="/images/dog_6.png"
+                src="/dog_6.png"
                 alt="dog_6"
             />
             <img
                 className="d-block w-100"
-                src="/images/dog_7.png"
+                src="/dog_7.png"
                 alt="dog_7"
             />
             <img
                 className="d-block w-100"
-                src="/images/dog_8.png"
+                src="/dog_8.png"
                 alt="dog_8"
                     />
         </div>
@@ -72,22 +72,22 @@ function Carousels() {
           
                     <img
                         className="d-block w-100"
-                        src="/images/dog_9.png"
+                        src="/dog_9.png"
                         alt="dog_9"
                     />
                     <img
                         className="d-block w-100"
-                        src="/images/dog_10.png"
+                        src="/dog_10.png"
                         alt="dog_11"
                     />
                     <img
                         className="d-block w-100"
-                        src="/images/dog_11.png"
+                        src="/dog_11.png"
                         alt="dog_12"
                     />
                     <img
                         className="d-block w-100"
-                        src="/images/dog_12.png"
+                        src="/dog_12.png"
                         alt="dog_13"
                     />
           </div>
