@@ -8,16 +8,14 @@
     background-size: cover;
     animation: changing 10s infinite;
 }
-
 .container {
     position: absolute;
-    top: 50%;height: auto;
+    top: 50%;
     width: 50%;
     transform: translate(-50% -50%);
     text-align: center;
     
 }
-
 .pageClassName h1 {
     text-transform: uppercase;
     text-align: center;
@@ -29,7 +27,6 @@
 
 
 .descr p {
-    /* font-size: clamp(15px,3vw, 23px ); */
     text-transform: uppercase;
     text-align: center;
     color: rgb(249, 242, 242);
@@ -57,42 +54,19 @@
     68% {
         background-image: url(./img/Dog1.png)
     }
-    100% {
+    68% {
         background-image: url(./img/Dog4.png)
     }
-    
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .pageClassName {
+        background-image: url(./img/mobile-background.png); /* Замените на изображение для мобильной версии */
         background-size: cover;
     }
     .container {
-        width: 90%;
+        width: 100%;
     }
-    .pageClassName h1 {
-        font-size: 24px;
-    }
-    .descr p {
-        font-size: 14px;
-    } 
-    .title {
-        margin-top: 90px;
-    }
-}
-@media (max-width: 1000px) {
-    .pageClassName {
-        background-size: cover;
-    }
-    .container {
-        width: 90%;
-    }
-    .pageClassName h1 {
-        font-size: 24px;
-    }
-    .descr p {
-        font-size: 14px;
-    } 
-    .title {
-        margin-top: 100px;
+    .container a {
+        font-size: 16px; /* Увеличьте размер шрифта для мобильной версии */
     }
 }
