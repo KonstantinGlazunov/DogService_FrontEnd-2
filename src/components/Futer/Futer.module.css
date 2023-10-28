@@ -1,6 +1,172 @@
-.ft {
-    min-width: 100px;
-    height: 200px;
-    background-color: rgb(85, 80, 80);
-    margin: 15px auto;
+.siteFooter {
+    background-image: url(./img/Footer3.png);
+    background-repeat: no-repeat;
+    width: 100%;
 }
+.siteFooter a {
+    color: white;
+}
+.container {
+    display: flex;
+    color: white;
+}
+.ftLogo{
+   
+    margin-bottom: 75px;
+    display: block;
+    text-decoration: none;
+}
+.footerLeft {
+    margin-right: 98px;
+    padding: 20px;
+  
+}
+.ftLogo h1{
+    color: greenyellow;
+}
+.ftLogo:hover {
+    color: green;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: rotate(360deg);
+}
+.ftInfo {
+    margin-bottom: 75px;
+    min-width: 190px;
+}
+.ftInfoItem {
+    display: flex;
+    align-items: center;
+}
+.ftInfoItem:nth-last-child(n+2) {
+    margin-bottom: 24px;
+}
+.ftInfoIcon {
+    margin-right: 12px;
+    text-align: center;
+}
+.ftInfoIcon .ic{
+    vertical-align: middle;
+    color: white;
+}
+.ftSocial a {
+    display: inline-block;
+}
+.ftSocial a:nth-last-child(n+2) {
+    margin-right: 30px;
+}
+.ftSocial a:hover {
+    transition: 0.35s ease;
+    transform: rotate(360deg);
+    color: #ff8a1d;
+}
+.ftRight {
+    padding: 20px 0;
+    display: flex;
+}
+.ftTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: rgb(29, 185, 42);
+}
+.ftRight a {
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+.ftRight a:hover {
+    color: green;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.ftMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+ftCopyRight {
+    text-align: center;
+    padding: 30px 0; 
+    border-top: 1px solid #000;
+    color: #C3C3C3;
+}
+.footerLeft span img, .ftSocial .ic 
+   {
+  width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    line-height: 8rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 0.5s;
+
+}
+@media (max-width: 1000px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .siteFooter {
+      background-size: cover;
+    }
+  
+    .footerLeft,
+    .ftRight,
+    .ftMenu {
+      width: 100%;
+      margin-right: 0;
+      padding: 15px;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .ftLogo h1 {
+      font-size: 2rem;
+      text-align: center;
+      
+    }
+  
+    .ftInfo {
+      margin: 0;
+    }
+  
+    .ftInfoItem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .ftInfoItem:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  
+    .ftInfoIcon,
+    .ftInfoItem span {
+      margin: 0;
+    }
+  
+    .ftSocial {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  
+    .ftSocial a {
+      margin: 0 1rem;
+    }
+    
+  
+    .ftTitle {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .ftRight a {
+      margin: 0;
+    }
+  
+    .ftCopyRight {
+      padding-top: 1rem;
+    }
+  }
