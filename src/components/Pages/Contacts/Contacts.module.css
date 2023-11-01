@@ -1,0 +1,243 @@
+.siteContact {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    background-color:rgb(179, 210, 179);
+    /* background-color:rgb(214, 247, 214); */
+    /* rgb(3, 3, 22) */
+}
+.serviceTop {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 15px;
+    padding-bottom: 20px;
+    flex-direction: column;
+}
+.title {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: 0.23em;
+    text-transform: uppercase;
+    color: #8d61ec;
+    position: relative;
+}
+.title::after {
+    content: "";
+    position: absolute;
+    background: rgb(66, 6, 81);
+    width: 0;
+    height: 6px;
+    bottom: -6px;
+    left: unset;
+    right: 0;
+    transition: width .2s linear;
+}
+.title:hover::after {
+    width: 100%;
+    left: 0;
+    right: unset;
+}
+.sub {
+    text-align: center;
+    color: rgb(66, 6, 81);
+    line-height: 1.3rem;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+form {
+    width: 70%;
+    min-width: 450px;
+}
+.side {
+    width: 45%;
+}
+form .inputRow {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(26, 8, 45);
+}
+form input, textarea {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    text-align: left;
+    font-size: 14.5px;
+    width: 100%;
+    color: #090909;
+    padding: .6em;
+    padding-left: 0;
+}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px #0b0b0f inset !important;
+    -webkit-box-shadow: 0 0 0 30px #0b0b0f inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+.textarea {
+    resize: none;
+    line-height: 1.4;
+    margin-top: 90px;
+}
+button {
+    background-color: transparent;
+    border: 1px solid #8d61ec;
+    display: block;
+    margin: 80px auto 0;
+    position: relative;
+    color: #0b0a0a;
+    padding: 15px 30px;
+    overflow: hidden;
+    z-index: 1;
+}
+button:hover {
+    color: #fff;
+}
+button:hover::after {
+    width: 100%;
+    right: 0;
+    opacity: 1;
+}
+button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    right: 100%;
+    transition: all 0.2s linear;
+    height: 100%;
+    z-index: -1;
+    background-color: #8d61ec;  
+}
+section {
+    padding: 5rem 7%;
+    min-width: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.map {
+    flex: 1 1 10rem;
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .map {
+      width: 100%;
+      flex: 1 1 auto;
+      margin-bottom: 20px;
+    }
+  
+    .info {
+      order: -1;
+      justify-content: center;
+    }
+  
+    .serviceTop {
+      padding: 40px 15px;
+    }
+  
+    .title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    .title::after {
+      bottom: -4px;
+    }
+  
+    .sub {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  
+    form {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .map {
+      margin-bottom: 10px;
+    }
+  
+    .serviceTop {
+      padding: 20px 10px;
+    }
+  
+    .title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    .title::after {
+      bottom: -2px;
+    }
+  
+    .sub {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  
+    form {
+      width: 100%;
+    }
+    .info {
+        justify-content: center;
+    }
+    
+  }
+  @media (max-width: 600px) {
+    .map {
+      display: none; 
+    }
+  
+    .serviceTop {
+      padding: 20px 10px; 
+    }
+  
+    .title {
+      font-size: 18px; 
+      margin-bottom: 10px;
+    }
+    .inputRow {
+        display: flex;
+        align-items: center;
+    }
+    .info {
+        justify-content: center
+    }
+  
+    .title::after {
+      bottom: -2px;
+    }
+  
+    .sub {
+      font-size: 14px; 
+      margin-bottom: 20px;
+    }
+  
+    form {
+        display: flex;
+      width: 100%;
+      align-items: center;
+      flex-direction: column
+    }
+  
+    form .inputRow {
+      flex-direction: column;
+    }
+  
+    form input, form textarea {
+      width: 100%; 
+    }
+  }
+  
+  
+  
+  
+  
