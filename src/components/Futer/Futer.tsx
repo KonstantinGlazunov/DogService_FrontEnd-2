@@ -40,9 +40,9 @@ const Futer = (): JSX.Element => {
                     </div>
 
                     <div className={styles.ftSocial}>
-                    <a href="#"><img src={facebook} alt="" className={styles.ic} /></a>
-                    <a href="#"><img src={instagram} alt="" className={styles.ic} /></a>
-                    <a href="#"><img src={youtube} alt="" className={styles.ic}/></a>
+                    <a href="https://www.facebook.com/profile.php?id=61553103295303" target="_blank"><img src={facebook} alt="" className={styles.ic} /></a>
+                    <a href="https://www.instagram.com/hunde24service/" target="_blank"><img src={instagram} alt="" className={styles.ic} /></a>
+                <a href="https://www.youtube.com/channel/UCaozidmPEF99KGAJlB8opAg" target="_blank"><img src={youtube} alt="" className={styles.ic}/></a>
                     </div>
                 </div>
                 <div className={styles.ftRight}>
