@@ -6,7 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
-import Authorization from '../Authorization/Autorization';
+import Registration from '../Registration/Registration';
+import Login from '../Login/Login';
 
 function Navibar() : JSX.Element{
 	return (
@@ -21,7 +22,8 @@ function Navibar() : JSX.Element{
 						<Nav.Link as={Link} to="/about">About</Nav.Link>
 						<Nav.Link as={Link} to="/contact">Contact</Nav.Link>           
 					</Nav>
-					<Authorization />
+					<Login />
+					<Registration />
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
