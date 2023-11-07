@@ -1,17 +1,4 @@
-# vite-template-redux
-
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
-
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
-
-## Goals
-
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+# Шаблон фронтенд приложения
 
 ## Scripts
 
@@ -19,9 +6,18 @@ npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
 - `build` - build for production
 - `preview` - locally preview production build
 - `test` - launch test runner
+- `lint`: - запускает проверку
+- `lint:fix`: - исправляет
 
-## Inspiration
+При нажатии ctrl/cmd + s - происходит автоматическое форматирование.
+Если у вас не установлено расширение Prettier - установите его.
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+## Proxy
+В файле `vite.config.ts` прописан proxy - это адрес на который будут проиcходить запросы при разработке.
+```
+		proxy: {
+			'/api': {
+				target: 'http://localhost:8080',
+			},
+		},
+```

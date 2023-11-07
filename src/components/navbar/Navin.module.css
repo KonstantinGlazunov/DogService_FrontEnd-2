@@ -1,0 +1,14 @@
+.qwertynone {
+    display: none;
+}
+
+.qwertyblock {
+    display: block;
+}
+
+.qwertyblock button {
+    margin:  2px 5px;
+    background-color: #777472;
+    border-color: #777472;
+
+}
