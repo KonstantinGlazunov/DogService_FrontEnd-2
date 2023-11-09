@@ -2,9 +2,8 @@ export default interface DogSitter {
   id: number
   firstName: string
   lastName: string
-  email: string
-  about: string
-  dogSize: number
+  userName: string
   city: string
- // image: string
+  zip: string
+  email: string
 }

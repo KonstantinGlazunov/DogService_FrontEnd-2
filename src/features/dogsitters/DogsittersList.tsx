@@ -4,19 +4,26 @@ import { selectDogsitters } from "./selectors"
 import { loadDogsitters } from "./dogsittersSlice"
 
 export default function DogsittersList() {
-  const dogsitters = useAppSelector(selectDogsitters) //products.products
+  const dogsitters = useAppSelector(selectDogsitters)
   //вызов функции при первом ренедеринге
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(loadDogsitters()) //повесить на кнопку
+    dispatch(loadDogsitters())
   }, [dispatch])
   return (
     <div>
-      <h1>DogSittersList</h1>
+      
       {dogsitters.map((dogsitter) => (
         <li key={dogsitter.id}>
-          {dogsitter.firstName}
-         <div>{dogsitter.about}</div>  {/*сюда img */}
+          <a href="https://dogsy.ru/sitter/17181">
+            {" "}
+            {/*нужно сделать динамическую ссылку на страницу DogSiter*/}
+            <div>
+              {dogsitter.firstName} {dogsitter.lastName.charAt(0)}.{" "}
+            </div>
+            <div>{dogsitter.city} {dogsitter.zip}</div>
+            <div>{dogsitter.email}</div>
+          </a>
         </li>
       ))}
     </div>

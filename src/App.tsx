@@ -1,4 +1,5 @@
 import "./App.css"
+import "./features/dogsitters/Styles.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import Layout from "./layouts/Layout"

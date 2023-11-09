@@ -1,0 +1,95 @@
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .auth-form h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .btn-primary {
+    margin: 5px; 
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  
+
+  /* Стили для внешнего контейнера компонента */
+div {
+    margin-top: 20px;
+  }
+  
+  /* Стили для каждого элемента списка dogsitter */
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  /* Стили для ссылки */
+  a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Стили для имени и фамилии */
+  a > div:first-child {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Стили для города, почтового индекса и стоимости */
+  a > div:nth-child(2),
+  a > div:nth-child(3),
+  a > div:nth-child(4) {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Стили для электронной почты и стоимости в евро */
+  a > div:last-child {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #007bff;
+  }
