@@ -15,6 +15,7 @@ import Confirm from './features/auth/Confirm';
 import About from './components/Pages/About/About';
 import Home from './components/Pages/Home/Home';
 import Contacts from './components/Pages/Contacts/Contacts';
+import Sitters from './components/Pages/Sitters/Sitters';
 
 function App(): JSX.Element {
 	const dispatch = useAppDispatch();
@@ -42,6 +43,7 @@ function App(): JSX.Element {
 					<Route path="register" element={<Register />} />
 					<Route path="confirm" element={<Confirm />} />
 					<Route path="about" element={<About />} />
+					
 					{/* <Route path="contact" element={<Contacts />} /> */}
 					{/* <Route path="tasks" element={<AdminCabinet />} /> */}
 				</Route>

@@ -1,0 +1,134 @@
+#mainSection {
+	background-image: url(./images/manWithDog.png);
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100vh;
+  margin-top: 30px;
+}
+.title {
+	color: white;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.searchSitters {
+	width: 80%;
+	height: 300px;
+	background-color: #f9f9f9;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	border-radius: 20px;
+	margin-top: 35px;
+	color: black;
+  padding: 15px;
+
+}
+.searchSitters .descrSearch {
+	display: flex;
+	margin: 0 ;
+  padding: 0;
+	justify-content: space-between;
+  width: 100%;
+}
+.descr1,
+.descr2 {
+	margin: 0;
+	padding: 0;
+  
+}
+.descr1 p, .descr2 p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.descr1 .pHunde {
+  color: #15BBDE;
+  padding-left: 15px;
+}
+.descr1 .imgDescr {
+  display: flex;
+  text-align: center;
+  color: black;
+  
+  
+}
+.imgDescr img {
+  margin-right: 5px;
+}
+.pdescr2 {
+  color: #6F7C7E;
+}
+.searchSitters .selectDate {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 ;
+  padding: 0;
+justify-content: flex-start
+}
+
+.searchSitters .selectplz, .searchSitters .selDate {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.searchSitters .selDate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.dateFrom, .dateTo {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+#descrSection {
+  display: flex;
+  width: 100%;
+	height: 100vh;
+  justify-content: center;
+}
+#descrSection p {
+  width: 60%;
+  padding: 30px;
+}
+.sizeDog {
+  width: 50%;
+  text-align: center;
+}
+.selectSize {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly
+}
+.selOption{
+  display: flex;
+  flex-direction: row;
+}
+.sizeDogs {
+  display: flex;
+  border: 2px solid #15BBDE;
+  border-radius: 5px;
+  padding: 0;
+  margin: 5px;
+  cursor: pointer;
+  line-height: 1;
+  height: 45px;
+}
+.selected {
+  background-color: #15BBDE;
+  color: white;
+}
+.sizeDogs:hover {
+  background-color: #15BBDE;
+  color: white;
+}
+.btn {
+  background-color: #15BBDE;
+  color: white;
+  border: 2px solid #15BBDE;
+  border-radius: 15px;
+}
