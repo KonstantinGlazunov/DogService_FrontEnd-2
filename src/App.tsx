@@ -15,6 +15,7 @@ import Confirm from './features/auth/Confirm';
 import About from './components/Pages/About/About';
 import Home from './components/Pages/Home/Home';
 import Contacts from './components/Pages/Contacts/Contacts';
+import ClinicsList from './features/clinics/ClinicsList';
 
 function App(): JSX.Element {
 	const dispatch = useAppDispatch();
