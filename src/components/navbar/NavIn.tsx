@@ -50,6 +50,12 @@ function Navin(): JSX.Element {
 							<Nav.Link as={Link} to="/">
 								Home
 							</Nav.Link>
+							<Nav.Link as={Link} to="/clinics">
+								Clinics
+							</Nav.Link>
+							<Nav.Link as={Link} to="/kennels">
+								Kennels
+							</Nav.Link>
 							<Nav.Link as={Link} to="/about">
 								About
 							</Nav.Link>
