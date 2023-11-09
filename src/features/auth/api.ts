@@ -17,7 +17,7 @@ export async function user(): Promise<{
 }
 
 export async function login(credentials: Credentials): Promise<User> {
-	const res = await fetch('/api/login', {
+	const res = await fetch('http://walrus-app-ie6jv.ondigitalocean.app/api/login', {
 		method: 'POST',
 		body: `username=${credentials.email}&password=${credentials.password}`,
 		headers: {
