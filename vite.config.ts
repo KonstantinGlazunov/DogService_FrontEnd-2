@@ -10,7 +10,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				open: true,
 				proxy: {
 					'/api': {
-						target: 'http://localhost:8080',
+						target: 'http://walrus-app-ie6jv.ondigitalocean.app',
 					},
 				},
 			},
@@ -34,7 +34,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				open: true,
 				proxy: {
 					'/api': {
-						target: '/',
+						target: 'http://walrus-app-ie6jv.ondigitalocean.app',
 					},
 				},
 			},
