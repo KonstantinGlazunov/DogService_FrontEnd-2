@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable import/no-unresolved */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
+// eslint-disable-next-line import/default
 import React, { useState } from 'react';
 import s from './Sitters.module.css';
 import dogImage from './images/dog.png';
