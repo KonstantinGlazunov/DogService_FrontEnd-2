@@ -34,7 +34,7 @@ export async function login(credentials: Credentials): Promise<User> {
 }
 
 export async function registerUser(data: RegisterData): Promise<{ id: number; email: string }> {
-	const res = await fetch('/api/registerUser', {
+	const res = await fetch('http://walrus-app-ie6jv.ondigitalocean.app/api/registerUser', {
 		method: 'POST',
 		body: JSON.stringify(data),
 		headers: {
