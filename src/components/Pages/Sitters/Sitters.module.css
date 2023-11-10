@@ -13,7 +13,7 @@
 	justify-content: center;
 }
 .searchSitters {
-	width: 80%;
+	width: 70%;
 	height: 300px;
 	background-color: #f9f9f9;
 	display: flex;
@@ -63,16 +63,24 @@
 .searchSitters .selectDate {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0 ;
   padding: 0;
-justify-content: flex-start
+
+}
+.selectDate p {
+  text-align: center;
 }
 
 .searchSitters .selectplz, .searchSitters .selDate {
   width: 50%;
   display: flex;
   flex-direction: column;
+}
+.applySelect {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 .searchSitters .selDate {
   display: flex;
@@ -95,9 +103,19 @@ justify-content: flex-start
   width: 60%;
   padding: 30px;
 }
-.sizeDog {
+.selectSize .sizeDog {
+  display: flex;
   width: 50%;
   text-align: center;
+  flex-direction: wrap;
+}
+.sizeDog p, .sizeDog { 
+  text-align: center;
+  
+}
+.sizeDogs {
+  display: flex;
+  flex-direction: column;
 }
 .selectSize {
   display: flex;
@@ -107,6 +125,7 @@ justify-content: flex-start
 .selOption{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .sizeDogs {
   display: flex;
@@ -127,8 +146,103 @@ justify-content: flex-start
   color: white;
 }
 .btn {
+  padding: 0;
   background-color: #15BBDE;
   color: white;
   border: 2px solid #15BBDE;
   border-radius: 15px;
+}
+#descrSection {
+  height: 250%;
+}
+#propositionsSection {
+  display: flex;
+  justify-content: center;
+}
+.propositions {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  
+}
+.propos {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+   justify-content: center;
+  padding: 10px;
+}
+#aboutUs {
+  background-color: rgb(146, 199, 129);
+}
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 40px;
+  
+}
+.aboutDescr {
+  width: 35%;
+}
+
+
+@media (max-width: 900px) {
+  .selOption {
+    
+    /* display: none; */
+  }
+  .searchSitters .selectplz, .searchSitters .selDate {
+    width: 100%;
+     text-align: center;
+  }
+}
+.aboutDescr {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+
+@media (max-width: 900px){
+  .propositions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .propos {
+    width: 95%;
+  }
+
+  .applySelect {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .searchSitters {
+    height: 300px;
+    padding: 0 ;
+    width: 95%;
+  }
+  .title {
+    text-align: center;
+  }
+  #descrSection p{
+   width: 85%;
+    padding: 5px;
+  }
+  .pict img {
+    width: 95%;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+ }
+ .about .aboutDescr {
+  text-align: center;
+  width: 80%;
+  padding: 15px;
+ display: flex;
+ }
 }

@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import s from './Sitters.module.css';
 import dogImage from './images/dog.png';
 import Select from 'react-select';
+import betrou from './images/betreuung.png';
+import doginpark from './images/inpark.png';
+import aboutUs from './images/aboutUs.png';
 
 function Sitters() {
 	const options = [
@@ -119,11 +122,11 @@ function Sitters() {
 								</div>
 							</div>
 						</div>
-						<div className={s.applySelect}>
-							<button className={s.btn} type="button" onClick={applyFilters}>
-								Wählen Sie einen Hundesitter
-							</button>
-						</div>
+					</div>
+					<div className={s.applySelect}>
+						<button className={s.btn} type="button" onClick={applyFilters}>
+							Wählen Sie einen Hundesitter
+						</button>
 					</div>
 				</div>
 			</section>
@@ -138,6 +141,47 @@ function Sitters() {
 					er verdient. Kontaktieren Sie Petscare noch heute und geben Sie Ihrem Hund die beste
 					Betreuung.
 				</p>
+			</section>
+			<section id={s.propositionsSection}>
+				<div className={s.propositions}>
+					<div className={s.propos}>
+						<img src={doginpark} alt="Gruppen-Spaziergänge im Park" />
+						<h1>
+							Gruppen-Spaziergänge <br /> im Park
+						</h1>
+						<p>
+							Sozialisation und Bewegung für Ihren Hund in einer entspannten Gruppenatmosphäre.
+							(100-120 Zeichen)
+						</p>
+					</div>
+					<div className={s.propos}>
+						<img src={betrou} alt="Einzelbetreuung bei Ihnen zuhause" />
+						<h1>
+							Einzelbetreuung bei <br />
+							Ihnen zuhause
+						</h1>
+						<p>
+							Individuelle Betreuung und maßgeschneiderte Aktivitäten für Ihren Hund in vertrauter
+							Umgebung. (100-120 Zeichen)
+						</p>
+					</div>
+				</div>
+			</section>
+			<section id={s.aboutUs}>
+				<div className={s.about}>
+					<div className={s.pict}>
+						<img src={aboutUs} alt="About us" />
+					</div>
+					<div className={s.aboutDescr}>
+						<h1>Über uns Petscare</h1>
+						<p>
+							Unser Team von erfahrenen Hundeliebhabern ist bestrebt, die bestmögliche Betreuung für
+							Ihre pelzigen Freunde zu gewährleisten. Wir sind vollständig lizenziert und versichert
+							und bieten Ihnen die Gewissheit, dass Ihre Hunde in guten Händen sind, während Sie
+							beschäftigt sind oder nicht zu Hause sind.
+						</p>
+					</div>
+				</div>
 			</section>
 		</div>
 	);
