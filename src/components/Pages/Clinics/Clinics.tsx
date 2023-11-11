@@ -20,7 +20,7 @@ const Clinics: React.FC = (): JSX.Element => {
 
 	const clinics = {
 		name: 'Alabai',
-		description: 'Wir habben Alabai',
+		description: 'Wir kümmern uns um Ihre geliebten Tiere',
 		city: 'Berlin',
 		telephoneNumber: '+49521358742'
 	}
