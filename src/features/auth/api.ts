@@ -59,9 +59,9 @@ export async function registerSetter(data: RegisterData): Promise<{ id: number; 
 	const res = await fetch('https://walrus-app-ie6jv.ondigitalocean.app/api/registerSetter', {
 		method: 'POST',
 		body: JSON.stringify(data),
-		// headers: {
-		// 	'Content-Type': 'application/json',
-		// },
+		headers: {
+			'Content-Type': 'application/json',
+		},
 	});
 	interface Error {
 		message: string;
