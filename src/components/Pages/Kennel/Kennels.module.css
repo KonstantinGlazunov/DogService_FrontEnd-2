@@ -1,0 +1,159 @@
+#mainSection {
+  background-image: url('./img/bcKl.jpg');
+  background-size: 100% 100%;
+  width: 100%;
+	height: 90vh;
+}
+.title {
+	color: rgb(0, 1, 15);
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  margin: 0 auto;
+}
+.h1title {
+  text-align: center;
+}
+.ptitle {
+  font-size: 25px;
+}
+.searchSitters {
+	width: 70%;
+	height: 250px;
+	background-color: #f0e7da;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	border-radius: 20px;
+	margin-top: 50px;
+	color: black;
+  padding: 15px;
+
+}
+.searchSitters .descrSearch {
+	display: flex;
+	margin: 0 ;
+  padding: 0;
+	justify-content: space-between;
+  width: 100%;
+}
+.descr1,
+.descr2 {
+	margin: 0;
+	padding: 0;
+  
+}
+.descr1 p, .descr2 p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.descr1 .pHunde {
+  color: #15BBDE;
+  padding-left: 15px;
+}
+.descr1 .imgDescr {
+  display: flex;
+  text-align: center;
+  color: black;
+  
+  
+}
+.imgDescr img {
+  margin-right: 5px;
+}
+.pdescr2 {
+  color: #6F7C7E;
+}
+
+.searchSitters .selectDate {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 ;
+  padding: 0;
+
+}
+.selectDate p {
+  text-align: center;
+}
+
+.searchSitters .selectplz, .searchSitters .selDate {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.applySelect {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  padding: 0;
+  background-color: #15BBDE;
+  color: white;
+  border: 2px solid #15BBDE;
+  border-radius: 15px;
+}
+.kennelsSection {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+}
+.kenDescr {
+  text-align: center;
+  /* transition: background-color 0.3s, font-size 0.3s; */
+}
+.kenDescr:hover {
+  background-color: #e8d8d8;
+  font-size: 30px;
+}
+.imgRassen {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.rasTitle {
+  text-align: center;
+}
+
+.dogOne img,
+.dogtwo img {
+  width: 90%;
+  height: 300px;
+  border: 4px solid #e8d8d8;
+  border-radius: 15px;
+  margin: 10px;
+}
+.dogOne,
+.dogtwo  {
+  display: flex;
+  justify-content: center;
+}
+
+.dogtwo {
+  display: flex;
+}
+
+.dogtwo img {
+  width: 40%;
+}
+
+
+
+@media (max-width: 900px) {
+  .searchSitters {
+    width: 90%;
+  }
+  .dogOne img,
+.dogtwo img {
+  height: 150px;
+}
+.kenDescr:hover {
+  font-size: 20px;
+}
+}

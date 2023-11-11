@@ -1,7 +1,12 @@
+/* eslint-disable prettier/prettier */
 import { useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
+import Clinic from './types/Clinic';
 
 export default function ClinicsList(): JSX.Element {
+	interface ClinicsListProps {
+		clinics: Clinic[];
+	}
 	const clinics = useAppSelector(selectClinics);
 
 	return (
