@@ -8,7 +8,7 @@ export async function user(): Promise<{
 	userName: string;
 	role: string;
 }> {
-	const res = await fetch('/api/users/my/profile');
+	const res = await fetch('https://walrus-app-ie6jv.ondigitalocean.app/api/users/my/profile');
 	if (res.status >= 400) {
 		const { message }: { message: string } = await res.json();
 		throw new Error(message);
