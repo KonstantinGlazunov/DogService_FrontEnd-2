@@ -145,10 +145,15 @@
 
 
 
-
-
 @media (max-width: 900px) {
   .searchSitters {
     width: 90%;
   }
+  .dogOne img,
+.dogtwo img {
+  height: 150px;
+}
+.kenDescr:hover {
+  font-size: 20px;
+}
 }
