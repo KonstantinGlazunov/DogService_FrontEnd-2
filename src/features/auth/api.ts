@@ -8,7 +8,7 @@ export async function user(): Promise<{
 	userName: string;
 	role: string;
 }> {
-	const res = await fetch('/api/users/my/profile');
+	const res = await fetch('https://walrus-app-ie6jv.ondigitalocean.app/api/users/my/profile');
 	if (res.status >= 400) {
 		const { message }: { message: string } = await res.json();
 		throw new Error(message);
@@ -59,9 +59,9 @@ export async function registerSetter(data: RegisterData): Promise<{ id: number; 
 	const res = await fetch('https://walrus-app-ie6jv.ondigitalocean.app/api/registerSetter', {
 		method: 'POST',
 		body: JSON.stringify(data),
-		// headers: {
-		// 	'Content-Type': 'application/json',
-		// },
+		headers: {
+			'Content-Type': 'application/json',
+		},
 	});
 	interface Error {
 		message: string;
