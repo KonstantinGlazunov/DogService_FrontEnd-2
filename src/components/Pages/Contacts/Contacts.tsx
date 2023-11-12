@@ -43,7 +43,7 @@ const Contact = (): JSX.Element => {
 	};
 
 	return (
-		<div className={s.siteContact}>
+		<div id={s.siteContact} >
 			<section className={s.info}>
 				<div className={s.container}>
 					<div className={s.ftInfoItem}>
@@ -119,7 +119,7 @@ const Contact = (): JSX.Element => {
 							onChange={onchange}
 						/>
 					</div>
-					<button type="submit">{loading ? '' : buttonMessage}</button>
+					<button className={s.btn} type="submit">{loading ? '' : buttonMessage}</button>
 				</form>
 			</div>
 		</div>
