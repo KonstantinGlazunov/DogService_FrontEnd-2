@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { loadClinicsByCity } from './clinicsSlice';
+import s from '../../components/Pages/Clinics/Clinics.module.css';
 
 export default function FindClinicForm(): JSX.Element {
 	const [city, setCity] = useState<string>('');
@@ -11,16 +12,21 @@ export default function FindClinicForm(): JSX.Element {
 		dispatch(loadClinicsByCity(city));
 	}
 	return (
-		<div>
+		<div className={s.selOption}>
 			<form onSubmit={search}>
-				<input
-					type="text"
-					name="city"
-					placeholder="Enter city"
-					value={city}
-					onChange={(e) => setCity(e.target.value)}
-				/>
-				<button type="submit">Find clinics</button>
+				<div className={s.selectplz}>
+					<p>City</p>
+					<select value={city} onChange={(e) => setCity(e.target.value)}>
+						<option value="" disabled>
+							City
+						</option>
+						<option value="Berlin">Berlin</option>
+						<option value="Hamburg">Hamburg</option>
+					</select>
+				</div>
+				<button className={s.btn} type="submit">
+					Find clinics
+				</button>
 			</form>
 		</div>
 	);
