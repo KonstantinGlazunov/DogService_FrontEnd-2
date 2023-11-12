@@ -46,7 +46,7 @@ function App(): JSX.Element {
 					<Route path="about" element={<About />} />
 					<Route path="clinics" element={<Clinics />} />
 					<Route path="kennels" element={<Kennels />} />
-					{/* <Route path="contact" element={<Contacts />} /> */}
+					<Route path="contact" element={<Contacts />} />
 					{/* <Route path="tasks" element={<AdminCabinet />} /> */}
 				</Route>
 			</Routes>

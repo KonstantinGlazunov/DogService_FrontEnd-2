@@ -1,4 +1,4 @@
-.siteContact {
+#siteContact {
     margin: 0;
     box-sizing: border-box;
     font-family: "Manrope", sans-serif;
@@ -82,7 +82,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     line-height: 1.4;
     margin-top: 90px;
 }
-button {
+.btn {
     background-color: transparent;
     border: 1px solid #8d61ec;
     display: block;
@@ -93,15 +93,15 @@ button {
     overflow: hidden;
     z-index: 1;
 }
-button:hover {
+.btn:hover {
     color: #fff;
 }
-button:hover::after {
+.btn:hover::after {
     width: 100%;
     right: 0;
     opacity: 1;
 }
-button::after {
+.btn::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -122,7 +122,9 @@ section {
 }
 .map {
     flex: 1 1 10rem;
-    width: 80%;
+    width: 70%;
+    height: 300px;
+    padding: 10px;
 }
 
 @media (max-width: 768px) {

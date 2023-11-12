@@ -9,7 +9,7 @@ const Home = (): JSX.Element => {
 		<div>
 			<Carousels />
 			<Sitters />
-			<Contents />
+			{/* <Contents /> */}
 		</div>
 	);
 };
