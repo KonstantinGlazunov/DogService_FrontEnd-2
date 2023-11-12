@@ -1,10 +1,10 @@
-export default interface Clinic {
+export default interface Kennel {
 	id: number;
 	name: string;
 	description: string;
 	webSite: string;
 	country: string;
-	clinicCity: string;
+	kennelCity: string;
 	postCode: string;
 	address: string;
 	telephoneNumber: string;
