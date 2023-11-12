@@ -1,10 +1,9 @@
-export default interface Clinic {
-	id: number;
+export default interface KennelDto {
 	name: string;
 	description: string;
 	webSite: string;
 	country: string;
-	clinicCity: string;
+	kennelCity: string;
 	postCode: string;
 	address: string;
 	telephoneNumber: string;

@@ -1,17 +1,25 @@
-/* eslint-disable prettier/prettier */
-import { useAppSelector } from '../../app/hooks';
+import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
+import { deleteClinic, loadClinics } from './clinicsSlice';
 import Clinic from './types/Clinic';
 
 export default function ClinicsList(): JSX.Element {
-	interface ClinicsListProps {
-		clinics: Clinic[];
-	}
 	const clinics = useAppSelector(selectClinics);
+	const dispatch = useAppDispatch();
+	const [showList, setShowList] = useState(false);
+
+	const handleClick = (): void => {
+		dispatch(loadClinics());
+		setShowList(true);
+	};
 
 	return (
 		<div>
-			<h1>Clinics list</h1>
+			<button type="submit" onClick={handleClick}>
+				Show all clinics
+			</button>
+			{showList}
 			<ul>
 				{clinics.map((clinic) => (
 					<li key={String(clinic.id)}>
@@ -19,10 +27,13 @@ export default function ClinicsList(): JSX.Element {
 						<div>{clinic.description}</div>
 						<div>{clinic.webSite}</div>
 						<div>{clinic.country}</div>
-						<div>{clinic.city}</div>
+						<div>{clinic.clinicCity}</div>
 						<div>{clinic.postCode}</div>
 						<div>{clinic.address}</div>
 						<div>{clinic.telephoneNumber}</div>
+						<button type="button" onClick={() => dispatch(deleteClinic(clinic.id))}>
+							Delete
+						</button>
 					</li>
 				))}
 			</ul>

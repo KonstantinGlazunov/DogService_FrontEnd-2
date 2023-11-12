@@ -1,5 +1,4 @@
-export default interface Clinic {
-	id: number;
+export default interface ClinicDto {
 	name: string;
 	description: string;
 	webSite: string;
