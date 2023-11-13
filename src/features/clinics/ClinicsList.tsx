@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
 import { deleteClinic, loadClinics } from './clinicsSlice';
-import Clinic from './types/Clinic';
 
 export default function ClinicsList(): JSX.Element {
 	const clinics = useAppSelector(selectClinics);
@@ -19,7 +18,6 @@ export default function ClinicsList(): JSX.Element {
 			<button type="submit" onClick={handleClick}>
 				Show all clinics
 			</button>
-			{showList}
 			<ul>
 				{clinics.map((clinic) => (
 					<li key={String(clinic.id)}>
