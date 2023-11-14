@@ -10,33 +10,32 @@ export default function ClinicsList(): JSX.Element {
 
 	const handleClick = (): void => {
 		dispatch(loadClinics());
-		setShowList(!showList);
+		setShowList(true);
 	};
 
 	return (
 		<div>
 			<button type="submit" onClick={handleClick}>
-				{showList ? 'Hide clinics list' : 'Show clinics list'}
+				Show clinic list
 			</button>
-			{showList && (
-				<ul>
-					{clinics.map((clinic) => (
-						<li key={String(clinic.id)}>
-							<div>{clinic.name}</div>
-							<div>{clinic.description}</div>
-							<div>{clinic.webSite}</div>
-							<div>{clinic.country}</div>
-							<div>{clinic.clinicCity}</div>
-							<div>{clinic.postCode}</div>
-							<div>{clinic.address}</div>
-							<div>{clinic.telephoneNumber}</div>
-							<button type="button" onClick={() => dispatch(deleteClinic(clinic.id))}>
-								Delete
-							</button>
-						</li>
-					))}
-				</ul>
-			)}
+			{showList}
+			<ul>
+				{clinics.map((clinic) => (
+					<li key={String(clinic.id)}>
+						<div>{clinic.name}</div>
+						<div>{clinic.description}</div>
+						<div>{clinic.webSite}</div>
+						<div>{clinic.country}</div>
+						<div>{clinic.clinicCity}</div>
+						<div>{clinic.postCode}</div>
+						<div>{clinic.address}</div>
+						<div>{clinic.telephoneNumber}</div>
+						<button type="button" onClick={() => dispatch(deleteClinic(clinic.id))}>
+							Delete
+						</button>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }

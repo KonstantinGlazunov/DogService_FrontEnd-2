@@ -10,6 +10,7 @@ import dog9 from './img/dog9.jpg';
 import FindKennelForm from '../../../features/kennels/FindKennelForm';
 import KennelsList from '../../../features/kennels/KennelsList';
 
+
 const Kennels: React.FC = (): JSX.Element => {
 	 const options = [
 		{ value: 'chocolate', label: 'Chocolate' },
@@ -64,9 +65,14 @@ const Kennels: React.FC = (): JSX.Element => {
 					 */}
 
 				</div>
-			</section>
-			
 		
+			 </section>
+
+			 <section id={s.clinicsSection}>
+           <h2>Kennels</h2>
+              {<KennelsList/>}
+          </section>
+	
 
 			<section id={s.kennelsSection} className={s.kennelsSection}>
 				<div className={s.kenDescr}>

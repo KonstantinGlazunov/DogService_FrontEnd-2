@@ -73,6 +73,8 @@ const Clinics: React.FC = (): JSX.Element => {
               {<ClinicsList/>}
           </section>
 
+		
+
 			<section id={s.description}>
 				<div className={s.descr}>
 					<p>Tierhalter stehen oft vor der Wahl: Tierklinik oder Praxis für Kleintiere? Sollten sie ihr Haustier in eine Tierklinik oder in eine Kleintierpraxis bringen? Beide Einrichtungen bieten medizinische Versorgung für Tiere an, aber es gibt einige wichtige Unterschiede zwischen ihnen. In diesem Artikel erklären wir den Unterschied zwischen einer Tierklinik und einer Kleintierpraxis und helfen Ihnen, die richtige Wahl für Ihr Haustier zu treffen.</p>

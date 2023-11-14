@@ -6,7 +6,7 @@ import s from '../../components/Pages/Clinics/Clinics.module.css';
 export default function FindClinicForm(): JSX.Element {
 	const [city, setCity] = useState<string>('');
 	const dispatch = useAppDispatch();
-
+	
 	function search(e: FormEvent): void {
 		e.preventDefault();
 		dispatch(loadClinicsByCity(city));
