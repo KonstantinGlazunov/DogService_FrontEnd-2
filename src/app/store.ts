@@ -3,7 +3,8 @@ import authSlice from '../features/auth/authSlice';
 import tasksSlice from '../features/tasks/tasksSlice';
 import contactSlice from '../components/Pages/Contacts/contactSlice';
 import clinicsReducer from '../features/clinics/clinicsSlice';
-import kennelsReducer from '../features/kennels/kennelsSlice'
+import kennelsReducer from '../features/kennels/kennelsSlice';
+import dogsittersSlice from '../features/dogsitters/dogsittersSlice';
 
 export const store = configureStore({
 	reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
 		contacts: contactSlice,
 		clinics: clinicsReducer,
 		kennels: kennelsReducer,
+		loadDogsitters: dogsittersSlice,
 	},
 });
 
