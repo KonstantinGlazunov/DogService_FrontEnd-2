@@ -42,9 +42,9 @@ const Clinics: React.FC = (): JSX.Element => {
 							<p>Einen ehemaligen Hundesitter buchen</p>
 						</div>
 					</div>
-					<section>
+					<div>
 						{<FindClinicForm/>}
-					</section>
+					</div>
 
 
 					{/* <div className={s.selectDate}>

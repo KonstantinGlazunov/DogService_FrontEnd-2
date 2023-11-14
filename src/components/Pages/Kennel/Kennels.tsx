@@ -3,28 +3,19 @@
 import React, { useState } from 'react';
 import s from './Kennels.module.css';
 import dogImage from '../Sitters/images/dog.png';
-import Select from 'react-select';
 import dog2 from './img/dog2.jpg';
 import dog8 from './img/dog8.jpg';
 import dog5 from './img/dog5.jpeg';
 import dog9 from './img/dog9.jpg';
+import FindKennelForm from '../../../features/kennels/FindKennelForm';
+import KennelsList from '../../../features/kennels/KennelsList';
 
 const Kennels: React.FC = (): JSX.Element => {
-	const options = [
+	 const options = [
 		{ value: 'chocolate', label: 'Chocolate' },
 		{ value: 'dresden', label: 'Dresden' },
 		{ value: 'berlin', label: 'Berlin' },
 	];
-
-	const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
-	const [filteredSitters, setFilteredSitters] = useState<{ name: string; size: string }[]>([]);
-
-	const kennels = {
-		name: 'Alabai',
-		description: 'Wir habben Alabai',
-		city: 'Berlin',
-		telephoneNumber: '+49521358742',
-	};
 
 	return (
 		<div className={s.container}>
@@ -52,7 +43,12 @@ const Kennels: React.FC = (): JSX.Element => {
 							<p>Einen ehemaligen Hundesitter buchen</p>
 						</div>
 					</div>
-					<div className={s.selectDate}>
+					<div>
+						{<FindKennelForm/>}
+					</div>
+
+
+				{/* 	<div className={s.selectDate}>
 						<div className={s.selectplz}>
 							<p>PLZ oder Ort</p>
 							<Select options={options} />
@@ -65,8 +61,13 @@ const Kennels: React.FC = (): JSX.Element => {
 							Wählen Sie einen Klinik
 						</button>
 					</div>
+					 */}
+
 				</div>
 			</section>
+			
+		
+
 			<section id={s.kennelsSection} className={s.kennelsSection}>
 				<div className={s.kenDescr}>
 					<h1>Züchter für Hunde</h1>

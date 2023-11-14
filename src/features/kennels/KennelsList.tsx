@@ -10,32 +10,33 @@ export default function KennelsList(): JSX.Element {
 
 	const handleClick = (): void => {
 		dispatch(loadKennels());
-		setShowList(true);
+		setShowList(!showList);
 	};
 
 	return (
 		<div>
 			<button type="submit" onClick={handleClick}>
-				Show all kennels
+				{showList ? 'Hide kennels list' : 'Show kennels list'}
 			</button>
-			{showList}
-			<ul>
-				{kennels.map((kennel) => (
-					<li key={String(kennel.id)}>
-						<div>{kennel.name}</div>
-						<div>{kennel.description}</div>
-						<div>{kennel.webSite}</div>
-						<div>{kennel.country}</div>
-						<div>{kennel.kennelCity}</div>
-						<div>{kennel.postCode}</div>
-						<div>{kennel.address}</div>
-						<div>{kennel.telephoneNumber}</div>
-						<button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
-							Delete
-						</button>
-					</li>
-				))}
-			</ul>
+			{showList && (
+				<ul>
+					{kennels.map((kennel) => (
+						<li key={String(kennel.id)}>
+							<div>{kennel.name}</div>
+							<div>{kennel.description}</div>
+							<div>{kennel.webSite}</div>
+							<div>{kennel.country}</div>
+							<div>{kennel.kennelCity}</div>
+							<div>{kennel.postCode}</div>
+							<div>{kennel.address}</div>
+							<div>{kennel.telephoneNumber}</div>
+							<button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
+								Delete
+							</button>
+						</li>
+					))}
+				</ul>
+			)}
 		</div>
 	);
 }
