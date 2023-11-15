@@ -62,3 +62,7 @@ export default function GetSittersForm(): JSX.Element {
 		</div>
 	);
 }
+
+
+
+ // Нужно перертаскивать сюда красоту из sittersPage или наоборот.    
