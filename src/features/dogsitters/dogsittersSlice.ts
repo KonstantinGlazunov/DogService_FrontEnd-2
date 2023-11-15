@@ -27,9 +27,14 @@ export const dogsittersSlice = createSlice({
   extraReducers: (builder) => {
     builder
     .addCase(loadDogsitters.fulfilled, (state, action) => {
+    console.log("LOAD DOGSITTERS", action.payload);
+    
       state.dogsitters = action.payload
+      
     })
     .addCase(loadDogsittersByCityAndSize.fulfilled, (state, action) => {
+console.log("ACTION PAYLOAD: ", action.payload);
+
       state.dogsitters = action.payload
     })
   },

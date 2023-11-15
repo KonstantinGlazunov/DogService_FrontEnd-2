@@ -6,5 +6,5 @@ export default interface DogSitter {
   city: string
   zip: string
   email: string
-  dogSize: number
+  dogSize: string
 }

@@ -8,9 +8,10 @@ export default function DogsittersList() {
   const dogsitters = useAppSelector(selectDogsitters)
   //вызов функции при первом ренедеринге
   const dispatch = useAppDispatch()
-  useEffect(() => {
+ /*useEffect(() => {
     dispatch(loadDogsitters())
-  }, [dispatch])
+  }, [dispatch])*/
+  
   return (
     <div>
       <h1>DogSittersList</h1>
@@ -23,9 +24,8 @@ export default function DogsittersList() {
               {dogsitter.firstName} {dogsitter.lastName.charAt(0)}.{" "}
             </div>
             <div>{dogsitter.city}</div>
-          
+            <div>{dogsitter.zip}</div>
             <div>{dogsitter.dogSize}</div>
-            <div>{dogsitter.zip} euro pro tag</div>
           </a>
         </li>
       ))}
