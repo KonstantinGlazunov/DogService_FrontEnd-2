@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/no-extraneous-dependencies */
@@ -24,10 +25,11 @@ const Register = (): JSX.Element => {
 	const [userName, setUserName] = useState('');
 	const [city, setSity] = useState('');
 	const [zip, setZip] = useState('');
+	const [setter, setSetter] = useState<boolean>(false);
+	const [size, setSize] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [passwordRepeat, setPasswordRepeat] = useState('');
-	const [setter, setSetter] = useState<boolean>(false);
 
 	const [show, setShow] = useState(false);
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -93,6 +95,7 @@ const Register = (): JSX.Element => {
 					userName,
 					city,
 					zip,
+					size,
 					email,
 					password,
 					passwordRepeat,
@@ -105,8 +108,21 @@ const Register = (): JSX.Element => {
 				setShowConf(true);
 			}
 		},
-		[dispatch, firstName, lastName, userName, city, zip, email, navigate, password, passwordRepeat]
+		[
+			dispatch,
+			firstName,
+			lastName,
+			userName,
+			city,
+			size,
+			zip,
+			email,
+			navigate,
+			password,
+			passwordRepeat,
+		]
 	);
+	console.log(size);
 
 	const handleFirstNameChange = useCallback(
 		(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -172,13 +188,23 @@ const Register = (): JSX.Element => {
 		[dispatch]
 	);
 
+	const handleSizeChange = useCallback(
+		(event: React.ChangeEvent<HTMLInputElement>) => {
+			setSize(event.target.value);
+			dispatch(resetRegisterFormError());
+		},
+		[dispatch]
+	);
+
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	function IsSetter(event: ChangeEvent<HTMLInputElement>): void {
 		if (setter == true) {
 			setSetter(false);
+			setSize('');
 		}
 		if (setter != true) {
 			setSetter(true);
+			setSize('A_MINI');
 		}
 	}
 
@@ -325,18 +351,39 @@ const Register = (): JSX.Element => {
 									/>
 								</Form.Group>
 							</Row>
+							<Row className="mb-3">
+								<Form.Group as={Col} md="8" controlId="validationCustom01">
+									<Form.Check
+										name="checked"
+										className={`form-control}`}
+										checked={setter}
+										onChange={IsSetter}
+										label="I'm ready to adopt a dog for a while."
+										feedbackType="invalid"
+									/>
+								</Form.Group>
 
-							<Form.Group className="mb-3">
-								<Form.Check
-									name="checked"
-									checked={setter}
-									onChange={IsSetter}
-									label="I'm ready to adopt a dog for a while."
-									// feedback="You must agree before submitting."
-									feedbackType="invalid"
-								/>
-							</Form.Group>
-
+								<Form.Group as={Col} md="4">
+									{/* <label htmlFor="size"></label> */}
+									<Form.Select
+										aria-label="Default select example"
+										className={`form-control }`}
+										id="size-input"
+										name="size"
+										value={size}
+										onChange={(e) => setSize(e.target.value)}
+									>
+										<option value="" disabled>
+											Size Of Dog
+										</option>
+										<option value="A_MINI">MINI</option>
+										<option value="B_SMALL">SMALL</option>
+										<option value="C_MIDDLE">MIDDLE</option>
+										<option value="D_BIG">BIG</option>
+										<option value="E_GREAT">GREAT</option>
+									</Form.Select>
+								</Form.Group>
+							</Row>
 							<button type="submit" className="btn btn-primary">
 								Registration
 							</button>
@@ -366,9 +413,6 @@ const Register = (): JSX.Element => {
 					<Button variant="secondary" onClick={handleCloseConf}>
 						Ok
 					</Button>
-					{/* <Button variant="primary" onClick={handleClose}>
-						Save Changes
-					</Button> */}
 				</Modal.Footer>
 			</Modal>
 		</>
