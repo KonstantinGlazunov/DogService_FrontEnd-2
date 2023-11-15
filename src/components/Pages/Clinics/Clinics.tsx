@@ -10,12 +10,21 @@ import Select from 'react-select';
 import FindClinicForm from '../../../features/clinics/FindClinicForm';
 
 const Clinics: React.FC = (): JSX.Element => {
-	const options = [
-		{ value: 'chocolate', label: 'Chocolate' },
-		{ value: 'strawberry', label: 'Strawberry' },
-		{ value: 'berlin', label: 'Berlin' },
-	];
+	// const options = [
+	// 	{ value: 'chocolate', label: 'Chocolate' },
+	// 	{ value: 'strawberry', label: 'Strawberry' },
+	// 	{ value: 'berlin', label: 'Berlin' },
+	// ];
 
+	// const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+	// const [filteredSitters, setFilteredSitters] = useState<{ name: string; size: string }[]>([]);
+
+	// const clinics = {
+	// 	name: 'Alabai',
+	// 	description: 'Wir kümmern uns um Ihre geliebten Tiere',
+	// 	city: 'Berlin',
+	// 	telephoneNumber: '+49521358742'
+	// }
   return (
     <div className={s.container}>
       <section id={s.mainSection}>
@@ -45,8 +54,6 @@ const Clinics: React.FC = (): JSX.Element => {
 					<div>
 						{<FindClinicForm/>}
 					</div>
-
-
 					{/* <div className={s.selectDate}>
 						<div className={s.selectplz}>
 							<p>PLZ oder Ort</p>
@@ -61,20 +68,15 @@ const Clinics: React.FC = (): JSX.Element => {
               Wählen Sie einen Klinik
             </button>
           </div> */}
-					
 					{/* <div className={s.dogg}>
 						Wir kümmern uns um Ihren Hund, wir haben die besten Kliniken
 					</div> */}
-					
         </div>
       </section>
 			<section id={s.clinicsSection}>
-           <h2>Kliniken</h2>
+           {/* <h2>Kennels</h2> */}
               {<ClinicsList/>}
           </section>
-
-		
-
 			<section id={s.description}>
 				<div className={s.descr}>
 					<p>Tierhalter stehen oft vor der Wahl: Tierklinik oder Praxis für Kleintiere? Sollten sie ihr Haustier in eine Tierklinik oder in eine Kleintierpraxis bringen? Beide Einrichtungen bieten medizinische Versorgung für Tiere an, aber es gibt einige wichtige Unterschiede zwischen ihnen. In diesem Artikel erklären wir den Unterschied zwischen einer Tierklinik und einer Kleintierpraxis und helfen Ihnen, die richtige Wahl für Ihr Haustier zu treffen.</p>
@@ -107,7 +109,10 @@ const Clinics: React.FC = (): JSX.Element => {
 					</div>
 				</div>
 			</section>
-      
+      <section id={s.clinicsSection}>
+        <h2>Kliniken</h2>
+        {/* <ClinicsList clinics={clinics} /> */}
+      </section>
     </div>
 	);
 };

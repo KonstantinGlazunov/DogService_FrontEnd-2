@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectKennels } from './selectors';
 import { loadKennels, deleteKennel } from './kennelsSlice';
+import s from '../../components/Pages/Kennel/Kennels.module.css';
 
 export default function KennelsList(): JSX.Element {
 	const kennels = useAppSelector(selectKennels);
@@ -12,17 +13,22 @@ export default function KennelsList(): JSX.Element {
 		dispatch(loadKennels());
 		setShowList(true);
 	};
+	useEffect(() => {
+		dispatch(loadKennels());
+	}, [dispatch]);
 
 	return (
-		<div>
-			<button type="submit" onClick={handleClick}>
-				Swow kennels list
-			</button>
+		<div className={s.kennelContainer}>
+			<div className={s.btnList}>
+				<button type="submit" onClick={handleClick} className={s.btn}>
+					Swow kennels list
+				</button>
+			</div>
 			{showList}
-			<ul>
+			<ul className={s.kennelsList}>
 				{kennels.map((kennel) => (
-					<li key={String(kennel.id)}>
-						<div>{kennel.name}</div>
+					<li key={String(kennel.id)} className={s.kennelItem}>
+						<div className={s.dogName}>{kennel.name}</div>
 						<div>{kennel.description}</div>
 						<div>{kennel.webSite}</div>
 						<div>{kennel.country}</div>

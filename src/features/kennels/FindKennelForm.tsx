@@ -11,8 +11,8 @@ export default function FindKennelForm(): JSX.Element {
 		dispatch(loadKennelsByCity(city));
 	}
 	return (
-		<div className={s.selOption}>
-			<form onSubmit={search}>
+		<div className={s.selectDate}>
+			<form onSubmit={search} >
 				<div className={s.selectplz}>
 					<p>City</p>
 					<select value={city} onChange={(e) => setCity(e.target.value)}>
@@ -23,9 +23,11 @@ export default function FindKennelForm(): JSX.Element {
 						<option value="Hamburg">Hamburg</option>
 					</select>
 				</div>
-				<button className={s.btn} type="submit">
-					Find kennels
-				</button>
+				<div className={s.applySelect}>
+					<button className={s.btn} type="submit">
+						Find kennels
+					</button>
+				</div>
 			</form>
 		</div>
 	);

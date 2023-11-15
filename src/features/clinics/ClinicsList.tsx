@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
 import { deleteClinic, loadClinics } from './clinicsSlice';
+import s from '../../components/Pages/Clinics/Clinics.module.css';
 
 export default function ClinicsList(): JSX.Element {
 	const clinics = useAppSelector(selectClinics);
@@ -13,15 +14,21 @@ export default function ClinicsList(): JSX.Element {
 		setShowList(true);
 	};
 
+	useEffect(() => {
+		dispatch(loadClinics());
+	}, [dispatch]);
+
 	return (
-		<div>
-			<button type="submit" onClick={handleClick}>
-				Show clinic list
-			</button>
+		<div className={s.clinicContainer}>
+			<div className={s.btnList}>
+				<button type="submit" onClick={handleClick} className={s.btn}>
+					Show clinic list
+				</button>
+			</div>
 			{showList}
-			<ul>
+			<ul className={s.clinicsList}>
 				{clinics.map((clinic) => (
-					<li key={String(clinic.id)}>
+					<li key={String(clinic.id)} className={s.kennelItem}>
 						<div>{clinic.name}</div>
 						<div>{clinic.description}</div>
 						<div>{clinic.webSite}</div>
