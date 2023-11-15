@@ -12,11 +12,11 @@ import KennelsList from '../../../features/kennels/KennelsList';
 
 
 const Kennels: React.FC = (): JSX.Element => {
-	 const options = [
-		{ value: 'chocolate', label: 'Chocolate' },
-		{ value: 'dresden', label: 'Dresden' },
-		{ value: 'berlin', label: 'Berlin' },
-	];
+	//  const options = [
+	// 	{ value: 'chocolate', label: 'Chocolate' },
+	// 	{ value: 'dresden', label: 'Dresden' },
+	// 	{ value: 'berlin', label: 'Berlin' },
+	// ];
 
 	return (
 		<div className={s.container}>
