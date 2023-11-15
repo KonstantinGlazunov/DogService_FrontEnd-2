@@ -18,7 +18,7 @@ async function confirm(): Promise<User> {
 
 	const kod = url.substring(url.indexOf('?') + 4);
 
-	const res = await fetch('http://localhost:8080/api/users/confirm/' + kod);
+	const res = await fetch('/api/users/confirm/' + kod);
 
 	if (res.status >= 400) {
 		// достаем текст ошибки из ответа
