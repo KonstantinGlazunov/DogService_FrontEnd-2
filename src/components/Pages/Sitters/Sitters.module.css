@@ -11,6 +11,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+  margin: 0 auto;
+  text-shadow: 2px 2px 4px rgb(148, 235, 145);
 }
 .searchSitters {
 	width: 70%;
@@ -227,6 +229,7 @@
   }
   .title {
     text-align: center;
+    
   }
   #descrSection p{
    width: 85%;

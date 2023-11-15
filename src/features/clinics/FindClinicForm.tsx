@@ -22,6 +22,7 @@ export default function FindClinicForm(): JSX.Element {
 						</option>
 						<option value="Berlin">Berlin</option>
 						<option value="Hamburg">Hamburg</option>
+						<option value="Dresden">Dresden</option>
 					</select>
 				</div>
 				<button className={s.btn} type="submit">

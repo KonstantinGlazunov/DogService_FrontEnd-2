@@ -69,7 +69,7 @@ const Kennels: React.FC = (): JSX.Element => {
 			 </section>
 
 			 <section id={s.clinicsSection}>
-           <h2>Kennels</h2>
+           {/* <h2>Kennels</h2> */}
               {<KennelsList/>}
           </section>
 	

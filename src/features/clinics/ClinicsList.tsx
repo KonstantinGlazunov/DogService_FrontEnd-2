@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
 import { deleteClinic, loadClinics } from './clinicsSlice';
@@ -6,19 +6,22 @@ import { deleteClinic, loadClinics } from './clinicsSlice';
 export default function ClinicsList(): JSX.Element {
 	const clinics = useAppSelector(selectClinics);
 	const dispatch = useAppDispatch();
-	const [showList, setShowList] = useState(false);
+	// const [showList, setShowList] = useState(false);
 
-	const handleClick = (): void => {
+	// const handleClick = (): void => {
+	// 	dispatch(loadClinics());
+	// 	setShowList(true);
+	// };
+
+	useEffect(() => {
 		dispatch(loadClinics());
-		setShowList(true);
-	};
-
+	}, [dispatch]);
 	return (
 		<div>
-			<button type="submit" onClick={handleClick}>
+			{/* <button type="submit" onClick={handleClick}>
 				Show clinic list
 			</button>
-			{showList}
+			{showList} */}
 			<ul>
 				{clinics.map((clinic) => (
 					<li key={String(clinic.id)}>

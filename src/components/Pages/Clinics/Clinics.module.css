@@ -15,6 +15,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+  text-shadow: 2px 2px 4px rgb(148, 235, 145);
 }
 .ptitle {
   font-size: 25px;
