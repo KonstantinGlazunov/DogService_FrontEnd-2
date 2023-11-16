@@ -3,7 +3,7 @@
 import { useAppSelector } from '../../app/hooks';
 import { selectDogsitters } from './selectors';
 //import { loadDogsitters } from "./dogsittersSlice";
-import s from './DogsittersList.module.css';
+import s from './css/DogsittersList.module.css';
 
 export default function DogsittersList() {
 	const dogsitters = useAppSelector(selectDogsitters);

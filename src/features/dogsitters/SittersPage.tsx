@@ -5,7 +5,7 @@ import { useAppDispatch } from '../../app/hooks';
 import DogsittersList from './DogsittersList';
 import { loadDogsittersByCityAndSize } from './dogsittersSlice';
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import s from './Sitters.module.css';
+import s from './css/SittersPage.module.css';
 import dogImage from './images/dog.png';
 import betrou from './images/betreuung.png';
 import doginpark from './images/inpark.png';
