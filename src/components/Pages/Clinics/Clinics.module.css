@@ -17,6 +17,9 @@
 	text-shadow: 2px 2px 4px rgb(148, 235, 145);
 	margin: 0 auto;
 }
+.h1title {
+  text-align: center;
+}
 .ptitle {
 	font-size: 25px;
 }
@@ -119,13 +122,13 @@
 	font-weight: 600;
 	width: 200px;
 }
-#clinicsSection {
+/* #clinicsSection {
 	background-color: #ebe6d2;
 	width: 100%;
 	padding: 8px;
 	display: flex;
 	justify-content: center;
-}
+} */
 .btnList {
 	width: 90%;
 	display: flex !important;
@@ -181,6 +184,27 @@
 	width: 300px;
 	height: 70px;
 	justify-content: space-around;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.pagination button {
+  margin: 0 8px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+}
+
+.pagination button:hover {
+  background-color: #bbb;
+}
+.dogName {
+  text-align: center;
+  font-weight: bold;
 }
 /* .sign {
   margin: 5px;
