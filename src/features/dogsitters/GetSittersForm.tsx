@@ -6,22 +6,28 @@ import DogsittersList from './DogsittersList';
 import { loadDogsittersByCityAndSize } from './dogsittersSlice';
 
 export default function GetSittersForm(): JSX.Element {
-	const [toggleStart, setToggleStart] = useState(false); //возвращает массив - деструктуризация
-	const [toggleEmpty, setToggleEmpty] = useState(false); //если массив пустой то нужно сообщение!
-	const [city, setCity] = useState<string>('Berlin');
-	const [zip, setZip] = useState<string>('');
+	const [toggleStart, setToggleStart] = useState(false);
+	const [inputValue, setInputValue] = useState<string>('');
 	const [size, setSize] = useState<string>('');
 	const dispatch = useAppDispatch();
 
-	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
-
-		dispatch(loadDogsittersByCityAndSize({ city, size, zip }));
-		e.preventDefault(); //что б не перерходила на следующую страницу
-		setToggleStart(true);
-		
+	function processInput(inputValue: string) {
+		if (/^\d+$/.test(inputValue)) { //проверяем не цифра ли? 
+			return { zip: inputValue, city: '' };
+		} else {
+			return { zip: '', city: inputValue };
+		}
 	}
 
-	//useAppSelector получить массив собак, если пустой то тогл2 меняем на труе.
+	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
+		const processedInput = processInput(inputValue);
+		const { zip: processedZip, city: processedCity } = processedInput;
+console.log("ZIP: ", processedZip);
+console.log("CITY: ", processedCity);
+		dispatch(loadDogsittersByCityAndSize({ city: processedCity, size, zip: processedZip }));
+		e.preventDefault(); //что б не перерходила на следующую страницу
+		setToggleStart(true);
+	}
 
 	return (
 		<div>
@@ -31,19 +37,12 @@ export default function GetSittersForm(): JSX.Element {
 				<input
 					type="text"
 					className={`form-control`}
-					placeholder="Your city"
-					name="city"
-					value={city}
-					onChange={(e) => setCity(e.target.value)}
+					placeholder="PLZ oder ORT"
+					name="plz-or-city"
+					value={inputValue}
+					onChange={(e) => setInputValue(e.target.value)}
 				/>
-				<input
-					type="text"
-					className={`form-control`}
-					placeholder="Zip"
-					name="zip"
-					value={zip}
-					onChange={(e) => setZip(e.target.value)}
-				/>
+		
 				<h4>My dog's size</h4>
 				<select name="size" id="size" value={size} onChange={(e) => setSize(e.target.value)}>
 					<option value=" ">-</option>
@@ -58,11 +57,9 @@ export default function GetSittersForm(): JSX.Element {
 				</button>
 			</form>
 			{toggleStart && <DogsittersList />}
-			{/* toggle2 && div - no dogSitters */}
+
 		</div>
 	);
 }
 
 
-
- // Нужно перертаскивать сюда красоту из sittersPage или наоборот.    

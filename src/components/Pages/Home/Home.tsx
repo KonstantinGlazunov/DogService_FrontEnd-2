@@ -9,9 +9,8 @@ import SittersPage from '../../../features/dogsitters/SittersPage';
 const Home = (): JSX.Element => {
 	return (
 		<div>
-			<Carousels />
-			<GetSittersForm />
 			<SittersPage />
+			<Carousels />
 			{/* <Sitters /> */}
 			{/* <Contents /> */}
 		</div>
