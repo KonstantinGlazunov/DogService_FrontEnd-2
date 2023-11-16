@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   background-image: url('./img/bcKl.jpg');
-  background-size: 100% 100%;
+  background-size: cover;
   width: 100%;
 	height: 90vh;
   margin-top: 30px;
@@ -155,13 +155,6 @@
   justify-content: center;
 }
 
-.dogtwo {
-  display: flex;
-}
-
-.dogtwo img {
-  width: 40%;
-}
 #clinicsSection {
   background-color: #ebe6d2;
   width: 100%;
@@ -206,15 +199,43 @@
   text-align: center;
   font-weight: bold;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
 
+.pagination button {
+  margin: 0 8px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+}
+
+.pagination button:hover {
+  background-color: #bbb;
+}
 
 
 @media (max-width: 900px) {
-  .searchSitters {
-    width: 90%;
+  #mainSection {
+    padding: 0;
+    height: 500px;
+    align-content: center;
+    background-size:cover;
   }
-  .dogOne img,
-.dogtwo img {
+  .searchSitters {
+		height: 200px;
+		padding: 0;
+		width: 95%;
+    margin-top: 10px;
+	}
+	.kennelsList {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 3px;
+	}
+  .dogOne img {
   height: 200px;
 }
 .kenDescr:hover {
@@ -223,4 +244,51 @@
 .kennelsList {
   grid-template-columns: repeat(2, 1fr);
 }
+.ptitle {
+  font-size: 15px;
+}
+#Rassen {
+  padding: 5px;
+}
+
+
+}
+@media (max-width: 600px) {
+  #mainSection {
+    height: auto;
+  }
+  .searchSitters {
+    height: auto;
+    margin-top: 10px;
+  }
+  .kennelsSection {
+    width: 95%; 
+    margin: 0 auto;
+  }
+
+  .kenDescr {
+    font-size: 15px; 
+    transition: none;
+  }
+  .kennelsList {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 3px;
+  }
+  .dogOne img {
+    height: auto; 
+    max-width: 80%;
+  }
+  .dogOne {
+    display: flex;
+    flex-direction: column;
+  }
+  .kenDescr:hover {
+    font-size: 20px;
+  }
+  .ptitle {
+    font-size: 15px; 
+  }
+  #Rassen {
+    padding: 5px; 
+  }
 }
