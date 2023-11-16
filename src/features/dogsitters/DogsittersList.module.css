@@ -1,0 +1,47 @@
+.dogsittersListContainer {
+  margin-top: 30px;
+  padding: 15px;
+}
+
+.dogsittersListTitle {
+  text-align: center;
+  color: #15BBDE;
+}
+
+.dogsittersList {
+  list-style:none;
+  padding: 0;
+}
+
+.dogsitterName {
+  font-weight: bold;
+}
+
+
+
+.dogsitterItem {
+  width: 65%;
+  margin: 10px auto; /* Center the element horizontally with top and bottom margin */
+  background-color: #f9f9f9;
+  border: 2px solid #15BBDE;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; /* Added 'px' to specify the unit for padding */
+  line-height: 1;
+  height: auto;
+}
+
+.dogsitterData{
+  text-align: left;
+  padding: 20;
+  margin: 10px;
+}
+
+
+
+.dogsitterLocation,
+.dogsitterZip,
+.dogsitterSize {
+  margin-top: 5px;
+}

@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useNavigate } from 'react-router-dom';
-import { FormEvent, useCallback, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+
+import { FormEvent, useState } from 'react';
+import { useAppDispatch } from '../../app/hooks';
 import DogsittersList from './DogsittersList';
 import { loadDogsittersByCityAndSize } from './dogsittersSlice';
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
@@ -21,7 +21,7 @@ export default function SittersPage(): JSX.Element {
 
 	function processInput(inputValue: string) {
 		if (/^\d+$/.test(inputValue)) {
-			//проверяем не цифра ли?
+			//is a number?
 			return { zip: inputValue, city: '' };
 		} else {
 			return { zip: '', city: inputValue };
@@ -32,13 +32,13 @@ export default function SittersPage(): JSX.Element {
 		setSelectedSizes(size);
 	};
 	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
-		//функция по нажатии на кнопку
+		//push-button function
 		const processedInput = processInput(inputValue);
 		const { zip: processedZip, city: processedCity } = processedInput;
 		dispatch(
 			loadDogsittersByCityAndSize({ city: processedCity, size: selectedSizes, zip: processedZip })
 		);
-		e.preventDefault(); //что б не перерходила на следующую страницу
+		e.preventDefault(); //so it doesn't go to the next page.
 		setToggleStart(true);
 	}
 
@@ -52,12 +52,12 @@ export default function SittersPage(): JSX.Element {
 						unseren professionellen Dog Walking Service
 					</p>
 				</div>
-				{/* <div className={s.searchSitters}>   form begin */}
+				{/* form begin */}
 				<form className={s.searchSitters} onSubmit={handleSubmit}>
 					<div className={s.descrSearch}>
 						<div className={s.descr1}>
 							{' '}
-							{/* левый верхний блок */}
+							{/* upper left block */}
 							<p className={s.pHunde}>Hundespaziergänge</p>
 							<div className={s.imgDescr}>
 								<img src={dogImage} alt="dog" />
@@ -68,7 +68,7 @@ export default function SittersPage(): JSX.Element {
 						</div>
 						<div className={s.descr2}>
 							{' '}
-							{/* правый верхний блок */}
+							{/* upper right block */}
 							<p className={s.pdescr2}>Warst du schon bei uns?</p>
 							<p>Einen ehemaligen Hundesitter buchen</p>
 						</div>
@@ -77,7 +77,6 @@ export default function SittersPage(): JSX.Element {
 						{' '}
 						{/*PLZ oder ORT */}
 						<div className={s.selectplz}>
-							{/* <p>PLZ oder Ort</p> */}
 							<input
 								type="text"
 								className={`form-control`}
@@ -143,10 +142,10 @@ export default function SittersPage(): JSX.Element {
 					</div>
 				</form>
 				{/*end form*/}
-		
 			</section>
 			{/* SITTER LIST */}
 			{toggleStart && <DogsittersList />}
+			{/* Other content dogSitters page */}
 			<section id={s.descrSection}>
 				<p>
 					Petscare - Der beste Begleiter für Ihren Hund in Giessen, HE. Bei Petscare wissen wir, wie

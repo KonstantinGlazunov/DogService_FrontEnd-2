@@ -111,12 +111,9 @@
 }
 .sizeDog p, .sizeDog { 
   text-align: center;
-  
+  padding: 5px;
 }
-.sizeDogs {
-  display: flex;
-  flex-direction: column;
-}
+
 .selectSize {
   display: flex;
   flex-wrap: wrap;
@@ -129,6 +126,7 @@
 }
 .sizeDogs {
   display: flex;
+  flex-direction: column;
   border: 2px solid #15BBDE;
   border-radius: 5px;
   padding: 0;
@@ -152,9 +150,7 @@
   border: 2px solid #15BBDE;
   border-radius: 15px;
 }
-#descrSection {
-  height: 250%;
-}
+
 #propositionsSection {
   display: flex;
   justify-content: center;
