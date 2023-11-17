@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/no-extraneous-dependencies */
-import { Button, Col, Form, InputGroup, Modal, Nav, Row } from 'react-bootstrap';
+import { Button, Col, Form, InputGroup, Modal, Nav, Row, FormControl } from 'react-bootstrap';
 //import styles from './Registration.module.css';
 import { ChangeEvent, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,8 @@ import { selectRegisterFormError } from './selectors';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import styles from './Register.module.css';
 import Conf from './ConfirmationReg';
+import eyeoff from './img/eyeclosed.svg';
+import eyeonn from './img/eyee.svg';
 
 const none: string = styles.qwertynone;
 const block: string = styles.qwertyblock;
@@ -43,6 +45,7 @@ const Register = (): JSX.Element => {
 	const handleCloseConf = () => setShowConf(false);
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	const handleShowConf = () => setShowConf(true);
+	const [showPassword, setShowPassword] = useState(false);
 
 	// const [validated, setValidated] = useState(false);
 
@@ -211,7 +214,9 @@ const Register = (): JSX.Element => {
 	// function handleClose(): void {
 	// 	throw new Error('Function not implemented.');
 	// }
-
+	const handleTogglePasswordVisibility = () => {
+		setShowPassword(!showPassword);
+	};
 	return (
 		<>
 			<div className={block}>
@@ -325,14 +330,27 @@ const Register = (): JSX.Element => {
 									<label htmlFor="password-input" className="form-label">
 										Password
 									</label>
-									<input
-										type="password"
-										className={`form-control ${error ? 'is-invalid' : ''}`}
-										id="password-input"
-										name="password"
-										value={password}
-										onChange={handlePasswordChange}
-									/>
+									<InputGroup>
+										<FormControl
+											type={showPassword ? "text" : "password"}
+											className={`form-control ${error ? 'is-invalid' : ''}`}
+											id="password-input"
+											name="password"
+											value={password}
+											onChange={handlePasswordChange}
+										/>
+										<Button
+											variant="outline-secondary"
+											onClick={handleTogglePasswordVisibility}
+											className={`custom-button ${styles.qwertyb}`}
+										>
+											<img
+												src={showPassword ? eyeoff : eyeonn}
+												alt="eye"
+												className={`custom-button ${styles.qwertyb}`}
+											/>
+										</Button>
+									</InputGroup>
 								</Form.Group>
 							</Row>
 
@@ -341,14 +359,27 @@ const Register = (): JSX.Element => {
 									<label htmlFor="password-repeat-input" className="form-label">
 										Repeat password
 									</label>
-									<input
-										type="password"
-										className={`form-control ${error ? 'is-invalid' : ''}`}
-										id="password-repeat-input"
-										name="passwordRepeat"
-										value={passwordRepeat}
-										onChange={handlePasswordRepeatChange}
-									/>
+									<InputGroup>
+    <FormControl
+        type={showPassword ? "text" : "password"} // изменение типа в зависимости от состояния
+        className={`form-control ${error ? 'is-invalid' : ''}`}
+        id="password-repeat-input"
+        name="passwordRepeat"
+        value={passwordRepeat}
+        onChange={handlePasswordRepeatChange}
+    />
+    <Button
+        variant="outline-secondary"
+        onClick={handleTogglePasswordVisibility}
+        className={`custom-button ${styles.qwertyb}`}
+    >
+        <img
+            src={showPassword ? eyeoff : eyeonn}
+            alt="eye"
+            className={`custom-button ${styles.qwertyb}`}
+        />
+    </Button>
+</InputGroup>
 								</Form.Group>
 							</Row>
 							<Row className="mb-3">
