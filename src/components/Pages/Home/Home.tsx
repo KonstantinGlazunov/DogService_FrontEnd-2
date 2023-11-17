@@ -6,6 +6,8 @@ import { useAppSelector } from '../../../app/hooks';
 import { selectUser } from '../../../features/auth/selectors';
 import Admin from '../AdminRoom/Admin';
 
+import SittersPage from '../../../features/dogsitters/SittersPage';
+
 // eslint-disable-next-line prettier/prettier
 const Home = (): JSX.Element => {
 	const user = useAppSelector(selectUser);
@@ -17,11 +19,9 @@ const Home = (): JSX.Element => {
 			) : (
 				<>
 					<Carousels />
-					<Sitters />
+				  <SittersPage />
 				</>
 			)}
-
-			{/* <Contents /> */}
 		</div>
 	);
 };
