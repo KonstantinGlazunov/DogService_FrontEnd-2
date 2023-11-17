@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { createKennel } from './kennelsSlice';
 
@@ -12,6 +12,7 @@ export default function KennelCreate(): JSX.Element {
 	const [address, setAddress] = useState<string>('');
 	const [telephoneNumber, setTelephoneNumber] = useState<string>('');
 	const [error, setError] = useState<string>('');
+	const [successMessage, setSuccessMessage] = useState('');
 
 	const dispatch = useAppDispatch();
 
@@ -64,9 +65,29 @@ export default function KennelCreate(): JSX.Element {
 					address,
 					telephoneNumber,
 				})
-			);
+			).then(() => {
+				setSuccessMessage('Kennel was successfully created');
+				setName('');
+				setDescription('');
+				setWebSite('');
+				setCountry('');
+				setKennelCity('');
+				setPostCode('');
+				setAddress('');
+				setTelephoneNumber('');
+			});
 		}
 	}
+
+	useEffect(() => {
+		if (successMessage) {
+			const timer = setTimeout(() => {
+				setSuccessMessage('');
+			}, 2000);
+
+			return () => clearTimeout(timer);
+		}
+	}, [successMessage]);
 
 	return (
 		<div>
@@ -122,6 +143,7 @@ export default function KennelCreate(): JSX.Element {
 					onChange={(e) => setTelephoneNumber(e.target.value)}
 				/>
 				<button type="submit">Create new kennel</button>
+				<div>{successMessage}</div>
 			</form>
 		</div>
 	);

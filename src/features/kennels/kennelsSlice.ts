@@ -21,6 +21,11 @@ export const createKennel = createAsyncThunk('kennels/createKennel', (kennel: Ke
 	api.createKennel(kennel)
 );
 
+export const updateKennel = createAsyncThunk(
+	'kennels/updateKennel',
+	({ kennel, id }: { kennel: KennelDto; id: number }) => api.updateKennel(kennel, id)
+);
+
 export const kennelsSlice = createSlice({
 	name: 'kennels',
 	initialState,
@@ -35,6 +40,9 @@ export const kennelsSlice = createSlice({
 			})
 			.addCase(deleteKennel.fulfilled, (state, action) => {
 				state.kennels = state.kennels.filter((kennel) => kennel.id !== action.payload.id);
+			})
+			.addCase(updateKennel.fulfilled, (state, action) => {
+				state.kennels.map((kennel) => (kennel.id === action.payload.id ? action.payload : kennel));
 			});
 	},
 });

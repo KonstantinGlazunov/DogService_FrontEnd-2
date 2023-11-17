@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectKennels } from './selectors';
 import { loadKennels, deleteKennel } from './kennelsSlice';
 import s from '../../components/Pages/Kennel/Kennels.module.css';
+import KennelEditForm from './KennelEditForm';
 
 export default function KennelsList(): JSX.Element {
 	const kennels = useAppSelector(selectKennels);
@@ -15,10 +16,6 @@ export default function KennelsList(): JSX.Element {
 	const handleClick = (): void => {
 		dispatch(loadKennels());
 	};
-
-	useEffect(() => {
-		dispatch(loadKennels());
-	}, [dispatch]);
 
 	const startIndex = (page - 1) * itemsPerPage;
 	const endIndex = page * itemsPerPage;
@@ -45,7 +42,10 @@ export default function KennelsList(): JSX.Element {
 						<div>{kennel.telephoneNumber}</div>
 						{/* <button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
 							Delete
+						</button>
+						<KennelEditForm kennelId={kennel.id} />
 						</button> */}
+
 					</li>
 				))}
 			</ul>
