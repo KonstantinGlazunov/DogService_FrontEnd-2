@@ -4,7 +4,9 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectLoginFormError } from './selectors';
 import { getUser, login, resetLoginFormError } from './authSlice';
 import styles from './Login.module.css';
-import { Button, Modal, Nav, Row } from 'react-bootstrap';
+import { Button, Modal, Nav, Row, FormControl, InputGroup } from 'react-bootstrap';
+import eyeoff from './img/eyeclosed.svg';
+import eyeonn from './img/eyee.svg';
 
 const none: string = styles.qwertynone;
 const block: string = styles.qwertyblock;
@@ -15,6 +17,7 @@ function Login(): JSX.Element {
 	const error = useAppSelector(selectLoginFormError);
 	const [email, setName] = useState('');
 	const [password, setPassword] = useState('');
+	const [showPassword, setShowPassword] = useState(false);
 
 	const [show1, setShow] = useState(false);
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -65,6 +68,9 @@ function Login(): JSX.Element {
 		[dispatch]
 	);
 
+	const handleTogglePasswordVisibility = () => {
+		setShowPassword(!showPassword);
+	};
 	return (
 		<div className={block}>
 			<Nav>
@@ -102,14 +108,27 @@ function Login(): JSX.Element {
 							<label htmlFor="password-input" className="form-label">
 								Пароль
 							</label>
-							<input
-								type="password"
-								className={`form-control ${error ? 'is-invalid' : ''}`}
-								id="password-input"
-								name="password"
-								value={password}
-								onChange={handlePasswordChange}
-							/>
+							<InputGroup>
+								<FormControl
+									type={showPassword ? 'text' : 'password'}
+									className={`form-control ${error ? 'is-invalid' : ''}`}
+									id="password-input"
+									name="password"
+									value={password}
+									onChange={handlePasswordChange}
+								/>
+								<Button
+									variant="outline-secondary"
+									onClick={handleTogglePasswordVisibility}
+									className={`custom-button ${styles.qwertyb}`}
+								>
+									<img
+										src={showPassword ? eyeoff : eyeonn}
+										alt="eye"
+										className={`custom-button ${styles.qwertyb}`}
+									/>
+								</Button>
+							</InputGroup>
 						</div>
 						<button type="submit" className="btn btn-primary">
 							Войти
