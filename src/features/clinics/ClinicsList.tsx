@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
 import { deleteClinic, loadClinics } from './clinicsSlice';
 import s from '../../components/Pages/Clinics/Clinics.module.css';
+import ClinicEditForm from './ClinicEditForm';
 
 export default function ClinicsList(): JSX.Element {
 	const clinics = useAppSelector(selectClinics);
@@ -14,9 +15,9 @@ export default function ClinicsList(): JSX.Element {
 		setShowList(true);
 	};
 
-	useEffect(() => {
+	/* 	useEffect(() => {
 		dispatch(loadClinics());
-	}, [dispatch]);
+	}, [dispatch]); */
 
 	return (
 		<div className={s.clinicContainer}>
@@ -40,6 +41,7 @@ export default function ClinicsList(): JSX.Element {
 						<button type="button" onClick={() => dispatch(deleteClinic(clinic.id))}>
 							Delete
 						</button>
+						<ClinicEditForm clinicId={clinic.id} />
 					</li>
 				))}
 			</ul>

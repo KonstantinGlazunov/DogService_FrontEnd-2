@@ -1,8 +1,9 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
-import { createClinic } from './clinicsSlice';
+import { updateClinic } from './clinicsSlice';
 
-export default function ClinicCreate(): JSX.Element {
+export default function ClinicEditForm(props: { clinicId: number }): JSX.Element {
+	const { clinicId } = props;
 	const [name, setName] = useState<string>('');
 	const [description, setDescription] = useState<string>('');
 	const [webSite, setWebSite] = useState<string>('');
@@ -11,10 +12,10 @@ export default function ClinicCreate(): JSX.Element {
 	const [postCode, setPostCode] = useState<string>('');
 	const [address, setAddress] = useState<string>('');
 	const [telephoneNumber, setTelephoneNumber] = useState<string>('');
+	const dispatch = useAppDispatch();
 	const [error, setError] = useState<string>('');
 	const [successMessage, setSuccessMessage] = useState('');
-
-	const dispatch = useAppDispatch();
+	const [showForm, setShowForm] = useState(false);
 
 	function validateInputs(): boolean {
 		if (name.trim() === '') {
@@ -51,22 +52,26 @@ export default function ClinicCreate(): JSX.Element {
 		}
 		return true;
 	}
+
 	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
 		e.preventDefault();
 		if (validateInputs()) {
 			dispatch(
-				createClinic({
-					name,
-					description,
-					webSite,
-					country,
-					clinicCity,
-					postCode,
-					address,
-					telephoneNumber,
+				updateClinic({
+					id: clinicId,
+					clinic: {
+						name,
+						description,
+						webSite,
+						country,
+						clinicCity,
+						postCode,
+						address,
+						telephoneNumber,
+					},
 				})
 			).then(() => {
-				setSuccessMessage('Clinic was successfully created');
+				setSuccessMessage('Clinic was successfully updated');
 				setName('');
 				setDescription('');
 				setWebSite('');
@@ -89,62 +94,70 @@ export default function ClinicCreate(): JSX.Element {
 		}
 	}, [successMessage]);
 
+	const handleClickUpdate = (): void => {
+		setShowForm(!showForm);
+	};
+
 	return (
 		<div>
-			<h1>Add new clinic</h1>
-			<form onSubmit={handleSubmit}>
-				{error && <p>{error}</p>}
-				<input
-					type="text"
-					placeholder="name"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="description"
-					value={description}
-					onChange={(e) => setDescription(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="webSite"
-					value={webSite}
-					onChange={(e) => setWebSite(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="country"
-					value={country}
-					onChange={(e) => setCountry(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="clinicCity"
-					value={clinicCity}
-					onChange={(e) => setClinicCity(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="postCode"
-					value={postCode}
-					onChange={(e) => setPostCode(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="address"
-					value={address}
-					onChange={(e) => setAddress(e.target.value)}
-				/>
-				<input
-					type="text"
-					placeholder="telephoneNumber"
-					value={telephoneNumber}
-					onChange={(e) => setTelephoneNumber(e.target.value)}
-				/>
-				<button type="submit">Create new clinic</button>
-				<div> {successMessage} </div>
-			</form>
+			<button type="submit" onClick={handleClickUpdate}>
+				{showForm ? 'Close' : 'Update'}
+			</button>
+			{showForm && (
+				<form onSubmit={handleSubmit}>
+					{error && <p>{error}</p>}
+					<input
+						type="text"
+						placeholder="name"
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+					/>
+					<input
+						type="text"
+						placeholder="description"
+						value={description}
+						onChange={(e) => setDescription(e.target.value)}
+					/>
+					<input
+						type="text"
+						placeholder="webSite"
+						value={webSite}
+						onChange={(e) => setWebSite(e.target.value)}
+					/>
+					<input
+						type="text"
+						placeholder="country"
+						value={country}
+						onChange={(e) => setCountry(e.target.value)}
+					/>
+					<input
+						type="text"
+						placeholder="clinicCity"
+						value={clinicCity}
+						onChange={(e) => setClinicCity(e.target.value)}
+					/>
+					<input
+						type="text"
+						placeholder="postCode"
+						value={postCode}
+						onChange={(e) => setPostCode(e.target.value)}
+					/>
+					<input
+						type="text"
+						placeholder="address"
+						value={address}
+						onChange={(e) => setAddress(e.target.value)}
+					/>
+					<input
+						type="text"
+						placeholder="telephoneNumber"
+						value={telephoneNumber}
+						onChange={(e) => setTelephoneNumber(e.target.value)}
+					/>
+					<button type="submit">Save changes</button>
+					<div> {successMessage} </div>
+				</form>
+			)}
 		</div>
 	);
 }

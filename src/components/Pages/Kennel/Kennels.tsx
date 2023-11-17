@@ -9,6 +9,7 @@ import dog5 from './img/dog5.jpeg';
 import dog9 from './img/dog9.jpg';
 import FindKennelForm from '../../../features/kennels/FindKennelForm';
 import KennelsList from '../../../features/kennels/KennelsList';
+import KennelCreate from '../../../features/kennels/KennelCreate';
 
 
 const Kennels: React.FC = (): JSX.Element => {
@@ -72,7 +73,11 @@ const Kennels: React.FC = (): JSX.Element => {
            {/* <h2>Kennels</h2> */}
               {<KennelsList/>}
           </section>
+
+				
 	
+
+
 
 			<section id={s.kennelsSection} className={s.kennelsSection}>
 				<div className={s.kenDescr}>

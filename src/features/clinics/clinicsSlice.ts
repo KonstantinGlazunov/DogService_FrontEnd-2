@@ -21,6 +21,11 @@ export const createClinic = createAsyncThunk('clinics/createClinic', (clinic: Cl
 	api.createClinic(clinic)
 );
 
+export const updateClinic = createAsyncThunk(
+	'clinics/updateClinic',
+	({ clinic, id }: { clinic: ClinicDto; id: number }) => api.updateClinic(clinic, id)
+);
+
 export const clinicsSlice = createSlice({
 	name: 'clinics',
 	initialState,
@@ -35,6 +40,9 @@ export const clinicsSlice = createSlice({
 			})
 			.addCase(deleteClinic.fulfilled, (state, action) => {
 				state.clinics = state.clinics.filter((clinic) => clinic.id !== action.payload.id);
+			})
+			.addCase(updateClinic.fulfilled, (state, action) => {
+				state.clinics.map((clinic) => (clinic.id === action.payload.id ? action.payload : clinic));
 			})
 			.addCase(createClinic.fulfilled, (state, action) => {
 				state.clinics.push(action.payload);

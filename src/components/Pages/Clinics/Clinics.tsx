@@ -8,6 +8,7 @@ import s from './Clinics.module.css';
 import dogImage from '../Sitters/images/dog.png';
 import Select from 'react-select';
 import FindClinicForm from '../../../features/clinics/FindClinicForm';
+import ClinicCreate from '../../../features/clinics/ClinicCreate';
 
 const Clinics: React.FC = (): JSX.Element => {
 	// const options = [
@@ -110,8 +111,7 @@ const Clinics: React.FC = (): JSX.Element => {
 				</div>
 			</section>
       <section id={s.clinicsSection}>
-        <h2>Kliniken</h2>
-        {/* <ClinicsList clinics={clinics} /> */}
+        {/* <h2>Kliniken</h2> */}
       </section>
     </div>
 	);

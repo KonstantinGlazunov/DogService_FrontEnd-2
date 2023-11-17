@@ -12,7 +12,7 @@ export default function FindKennelForm(): JSX.Element {
 	}
 	return (
 		<div className={s.selectDate}>
-			<form onSubmit={search} >
+			<form onSubmit={search}>
 				<div className={s.selectplz}>
 					<p>City</p>
 					<select value={city} onChange={(e) => setCity(e.target.value)}>

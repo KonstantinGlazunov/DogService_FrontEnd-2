@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectKennels } from './selectors';
 import { loadKennels, deleteKennel } from './kennelsSlice';
 import s from '../../components/Pages/Kennel/Kennels.module.css';
+import KennelEditForm from './KennelEditForm';
 
 export default function KennelsList(): JSX.Element {
 	const kennels = useAppSelector(selectKennels);
@@ -13,9 +14,10 @@ export default function KennelsList(): JSX.Element {
 		dispatch(loadKennels());
 		setShowList(true);
 	};
-	useEffect(() => {
+
+	/* useEffect(() => {
 		dispatch(loadKennels());
-	}, [dispatch]);
+	}, [dispatch]); */
 
 	return (
 		<div className={s.kennelContainer}>
@@ -39,6 +41,7 @@ export default function KennelsList(): JSX.Element {
 						<button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
 							Delete
 						</button>
+						<KennelEditForm kennelId={kennel.id} />
 					</li>
 				))}
 			</ul>
