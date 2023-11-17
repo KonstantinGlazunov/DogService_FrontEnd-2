@@ -72,7 +72,7 @@ form input, textarea {
     padding: .6em;
     padding-left: 0;
 }
-.inputRow input:-webkit-autofill, .inputRow input:-webkit-autofill:hover, .inputRow input:-webkit-autofill:focus, .inputRow input:-webkit-autofill:active {
+  .inputRow input:-webkit-autofill, .inputRow input:-webkit-autofill:hover, .inputRow input:-webkit-autofill:focus, .inputRow input:-webkit-autofill:active {
     box-shadow: 0 0 0 30px rgb(179, 210, 179) inset !important;
     -webkit-box-shadow: 0 0 0 30px rgb(179, 210, 179) inset !important;
     -webkit-text-fill-color: black !important;

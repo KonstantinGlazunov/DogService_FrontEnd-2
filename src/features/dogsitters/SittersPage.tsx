@@ -1,48 +1,46 @@
+/* eslint-disable react/react-in-jsx-scope */
+
+import { FormEvent, useState } from 'react';
+import { useAppDispatch } from '../../app/hooks';
+import DogsittersList from './DogsittersList';
+import { loadDogsittersByCityAndSize } from './dogsittersSlice';
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import React, { useState } from 'react';
-import s from './Sitters.module.css';
+import s from './css/SittersPage.module.css';
 import dogImage from './images/dog.png';
-import Select from 'react-select';
-import betrou from './images/dogErz.jpg';
-import doginpark from './images/dalmatian.jpg';
-import aboutUs from './images/manAbousUs.jpg';
+import betrou from './images/betreuung.png';
+import doginpark from './images/inpark.png';
+import aboutUs from './images/aboutUs.png';
 
-function Sitters() {
-	const options = [
-		{ value: 'chocolate', label: 'Chocolate' },
-		{ value: 'strawberry', label: 'Strawberry' },
-		{ value: 'vanilla', label: 'Vanilla' },
-	];
+export default function SittersPage(): JSX.Element {
+	const [toggleStart, setToggleStart] = useState(false);
+	const [inputValue, setInputValue] = useState<string>('');
+	const [selectedSizes, setSelectedSizes] = useState<string>('');
+	//const [size, setSize] = useState<string>('');
 
-	const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
-	const [filteredSitters, setFilteredSitters] = useState<{ name: string; size: string }[]>([]);
+	const dispatch = useAppDispatch();
 
-	const sitters = [
-		{
-			name: 'Oksana',
-			size: 'mittel',
-		},
-	];
+	function processInput(inputValue: string) {
+		if (/^\d+$/.test(inputValue)) {
+			//is a number?
+			return { zip: inputValue, city: '' };
+		} else {
+			return { zip: '', city: inputValue };
+		}
+	}
 
 	const toggleSize = (size: string) => {
-		if (selectedSizes.includes(size)) {
-			setSelectedSizes(selectedSizes.filter((s) => s !== size));
-		} else {
-			setSelectedSizes([...selectedSizes, size]);
-		}
+		setSelectedSizes(size);
 	};
-
-	const applyFilters = () => {
-		const filtered = sitters.filter((sitter) => {
-			if (selectedSizes.length > 0 && !selectedSizes.includes(sitter.size)) {
-				return false;
-			}
-
-			return true;
-		});
-
-		setFilteredSitters(filtered);
-	};
+	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
+		//push-button function
+		const processedInput = processInput(inputValue);
+		const { zip: processedZip, city: processedCity } = processedInput;
+		dispatch(
+			loadDogsittersByCityAndSize({ city: processedCity, size: selectedSizes, zip: processedZip })
+		);
+		e.preventDefault(); //so it doesn't go to the next page.
+		setToggleStart(true);
+	}
 
 	return (
 		<div className={s.container}>
@@ -54,9 +52,12 @@ function Sitters() {
 						unseren professionellen Dog Walking Service
 					</p>
 				</div>
-				<div className={s.searchSitters}>
+				{/* form begin */}
+				<form className={s.searchSitters} onSubmit={handleSubmit}>
 					<div className={s.descrSearch}>
 						<div className={s.descr1}>
+							{' '}
+							{/* upper left block */}
 							<p className={s.pHunde}>Hundespaziergänge</p>
 							<div className={s.imgDescr}>
 								<img src={dogImage} alt="dog" />
@@ -66,57 +67,68 @@ function Sitters() {
 							</div>
 						</div>
 						<div className={s.descr2}>
+							{' '}
+							{/* upper right block */}
 							<p className={s.pdescr2}>Warst du schon bei uns?</p>
 							<p>Einen ehemaligen Hundesitter buchen</p>
 						</div>
 					</div>
 					<div className={s.selectDate}>
+						{' '}
+						{/*PLZ oder ORT */}
 						<div className={s.selectplz}>
-							<p>PLZ oder Ort</p>
-							<Select options={options} />
+							<input
+								type="text"
+								className={`form-control`}
+								placeholder="PLZ oder Ort"
+								name="plz-or-city"
+								value={inputValue}
+								onChange={(e) => setInputValue(e.target.value)}
+							/>
 						</div>
 					</div>
+					{/* SIZE */}
 					<div className={s.selOption}>
 						<div className={s.sizeDog}>
 							<p>Die Größe meines Hundes</p>
 							<div className={s.selectSize}>
 								<div
 									className={
-										selectedSizes.includes('mini') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
+										selectedSizes.includes('A_MINI') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
 									}
-									onClick={() => toggleSize('mini')}
+									onClick={() => toggleSize('A_MINI')}
 								>
 									Mini <p>bis 5 kg</p>
 								</div>
 								<div
 									className={
-										selectedSizes.includes('small') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
+										selectedSizes.includes('B_SMALL') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
 									}
-									onClick={() => toggleSize('small')}
+									onClick={() => toggleSize('B_SMALL')}
 								>
 									Klein <p>5-10 kg</p>
 								</div>
 								<div
 									className={
-										selectedSizes.includes('medium') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
+										selectedSizes.includes('C_MIDDLE') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
 									}
-									onClick={() => toggleSize('medium')}
+									onClick={() => toggleSize('C_MIDDLE')}
 								>
 									Mittel <p>10-20 kg</p>
 								</div>
 								<div
 									className={
-										selectedSizes.includes('large') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
+										selectedSizes.includes('D_BIG') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
 									}
-									onClick={() => toggleSize('large')}
+									onClick={() => toggleSize('D_BIG')}
 								>
 									Groß <p>20-40 kg</p>
 								</div>
 								<div
 									className={
-										selectedSizes.includes('ragged') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
+										selectedSizes.includes('E_GREAT') ? `${s.sizeDogs} ${s.selected}` : s.sizeDogs
 									}
-									onClick={() => toggleSize('ragged')}
+									onClick={() => toggleSize('E_GREAT')}
 								>
 									Riesig <p>40+ kg</p>
 								</div>
@@ -124,12 +136,16 @@ function Sitters() {
 						</div>
 					</div>
 					<div className={s.applySelect}>
-						<button className={s.btn} type="button" onClick={applyFilters}>
+						<button type="submit" className="btn btn-primary">
 							Wählen Sie einen Hundesitter
 						</button>
 					</div>
-				</div>
+				</form>
+				{/*end form*/}
 			</section>
+			{/* SITTER LIST */}
+			{toggleStart && <DogsittersList />}
+			{/* Other content dogSitters page */}
 			<section id={s.descrSection}>
 				<p>
 					Petscare - Der beste Begleiter für Ihren Hund in Giessen, HE. Bei Petscare wissen wir, wie
@@ -186,5 +202,3 @@ function Sitters() {
 		</div>
 	);
 }
-
-export default Sitters;

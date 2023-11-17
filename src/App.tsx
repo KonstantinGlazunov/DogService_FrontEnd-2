@@ -17,6 +17,7 @@ import Home from './components/Pages/Home/Home';
 import Contacts from './components/Pages/Contacts/Contacts';
 import Clinics from './components/Pages/Clinics/Clinics';
 import Kennels from './components/Pages/Kennel/Kennels';
+import Admin from './components/Pages/AdminRoom/Admin';
 
 function App(): JSX.Element {
 	const dispatch = useAppDispatch();
@@ -47,6 +48,7 @@ function App(): JSX.Element {
 					<Route path="clinics" element={<Clinics />} />
 					<Route path="kennels" element={<Kennels />} />
 					<Route path="contact" element={<Contacts />} />
+					<Route path="admin" element={<Admin />} />
 					{/* <Route path="tasks" element={<AdminCabinet />} /> */}
 				</Route>
 			</Routes>

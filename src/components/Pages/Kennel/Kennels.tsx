@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import s from './Kennels.module.css';
 import dogImage from '../Sitters/images/dog.png';
-import dog2 from './img/dog2.jpg';
-import dog8 from './img/dog8.jpg';
+import dog2 from './img/isolated.jpg';
+import dog8 from './img/2150686742.jpg';
 import dog5 from './img/dog5.jpeg';
 import dog9 from './img/dog9.jpg';
+import dog10 from './img/closeup.jpg';
+
 import FindKennelForm from '../../../features/kennels/FindKennelForm';
 import KennelsList from '../../../features/kennels/KennelsList';
 import KennelCreate from '../../../features/kennels/KennelCreate';
@@ -124,14 +126,17 @@ const Kennels: React.FC = (): JSX.Element => {
 				<div className={s.imgRassen}>
 					<div className={s.dogOne}>
 						<img src={dog2} alt="Hunden" />
-					</div>
-					<div className={s.dogtwo}>
-						<img src={dog8} alt="Hunden" />
-						<img src={dog5} alt="" />
+						<img src={dog10} alt="Hunden" />
 					</div>
 					<div className={s.dogOne}>
-						<img src={dog9} alt="Hunden" />
+						<img src={dog8} alt="Hunden" />
+						<img src={dog5} alt="Hunden" />
 					</div>
+					{/* <div className={s.dogOne}>
+						<img src={dog9} alt="Hunden" />
+						<img src={dog9} alt="Hunden" />
+
+					</div> */}
 				</div>
 			</section>
 		</div>

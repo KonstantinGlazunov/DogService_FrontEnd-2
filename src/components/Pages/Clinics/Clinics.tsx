@@ -110,9 +110,16 @@ const Clinics: React.FC = (): JSX.Element => {
 					</div>
 				</div>
 			</section>
+
       <section id={s.clinicsSection}>
         {/* <h2>Kliniken</h2> */}
       </section>
+
+      {/* <section id={s.clinicsSection}>
+        <h2>Kliniken</h2> */}
+        {/* <ClinicsList clinics={clinics} /> */}
+      {/* </section> */}
+
     </div>
 	);
 };

@@ -8,16 +8,18 @@ import KennelEditForm from './KennelEditForm';
 export default function KennelsList(): JSX.Element {
 	const kennels = useAppSelector(selectKennels);
 	const dispatch = useAppDispatch();
-	const [showList, setShowList] = useState(false);
+	// const [showList, setShowList] = useState(false);
+
+	const [page, setPage] = useState(1);
+	const itemsPerPage = 9;
 
 	const handleClick = (): void => {
 		dispatch(loadKennels());
-		setShowList(true);
 	};
 
-	/* useEffect(() => {
-		dispatch(loadKennels());
-	}, [dispatch]); */
+	const startIndex = (page - 1) * itemsPerPage;
+	const endIndex = page * itemsPerPage;
+	const currentKennels = kennels.slice(startIndex, endIndex);
 
 	return (
 		<div className={s.kennelContainer}>
@@ -26,9 +28,9 @@ export default function KennelsList(): JSX.Element {
 					Swow kennels list
 				</button>
 			</div>
-			{showList}
+			{/* {showList} */}
 			<ul className={s.kennelsList}>
-				{kennels.map((kennel) => (
+				{currentKennels.map((kennel) => (
 					<li key={String(kennel.id)} className={s.kennelItem}>
 						<div className={s.dogName}>{kennel.name}</div>
 						<div>{kennel.description}</div>
@@ -38,13 +40,22 @@ export default function KennelsList(): JSX.Element {
 						<div>{kennel.postCode}</div>
 						<div>{kennel.address}</div>
 						<div>{kennel.telephoneNumber}</div>
-						<button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
+						{/* <button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
 							Delete
 						</button>
 						<KennelEditForm kennelId={kennel.id} />
+						</button> */}
+
 					</li>
 				))}
 			</ul>
+			<div className={s.pagination}>
+				{Array.from({ length: Math.ceil(kennels.length / itemsPerPage) }).map((_, index) => (
+					<button key={index} onClick={() => setPage(index + 1)}>
+						{index + 1}
+					</button>
+				))}
+			</div>
 		</div>
 	);
 }
