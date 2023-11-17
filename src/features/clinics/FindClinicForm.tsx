@@ -12,21 +12,24 @@ export default function FindClinicForm(): JSX.Element {
 		dispatch(loadClinicsByCity(city));
 	}
 	return (
-		<div className={s.selOption}>
+		<div className={s.selectDate}>
 			<form onSubmit={search}>
 				<div className={s.selectplz}>
 					<p>City</p>
-					<select value={city} onChange={(e) => setCity(e.target.value)}>
+					<select value={city} onChange={(e) => setCity(e.target.value)} >
 						<option value="" disabled>
 							City
 						</option>
 						<option value="Berlin">Berlin</option>
 						<option value="Hamburg">Hamburg</option>
+						<option value="Dresden">Dresden</option>
 					</select>
 				</div>
-				<button className={s.btn} type="submit">
-					Find clinics
-				</button>
+				<div className={s.applySelect}>
+					<button className={s.btn} type="submit">
+						Find clinics
+					</button>
+				</div>
 			</form>
 		</div>
 	);

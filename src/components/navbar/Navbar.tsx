@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable prettier/prettier */
 import { useCallback } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -6,6 +8,18 @@ import { selectUser } from '../../features/auth/selectors';
 import Navin from './NavIn';
 // eslint-disable-next-line import/no-unresolved
 import Navout from './Navout';
+import Admin from '../Pages/AdminRoom/Admin';
+
+function aaa(): void {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const navigate = useNavigate();
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const user = useAppSelector(selectUser);
+
+	if (user?.role === 'Admin') {
+		navigate('/admin');
+	}
+}
 
 function Navbar(): JSX.Element {
 	const dispatch = useAppDispatch();
@@ -28,7 +42,22 @@ function Navbar(): JSX.Element {
 	};
 
 	return (
-		<>{!user?.role ? <Navin /> : <Navout />}</>
+		<>
+			{!user?.role ? <Navin /> : <Navout />}
+
+			{/* {user?.role ? (
+				user.role === 'ADMIN' ? (
+					<>
+						<Navout />
+						<Admin />
+					</>
+				) : (
+					<Navin />
+				)
+			) : (
+				<Navin />
+			)} */}
+		</>
 
 		// <nav>
 		// 	{!user ? (

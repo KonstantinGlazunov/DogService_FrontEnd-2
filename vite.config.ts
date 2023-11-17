@@ -3,15 +3,14 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode, ssrBuild }) => {
-  if (mode === 'development') {
-    return {
+	if (mode === 'development') {
+		return {
 			plugins: [react()],
 			server: {
 				open: true,
 				proxy: {
 					'/api': {
-						//target: 'http://localhost:8080',
-						target: 'http://walrus-app-ie6jv.ondigitalocean.app',
+						target: 'http://localhost:8080',
 					},
 				},
 			},
@@ -25,17 +24,16 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				setupFiles: 'src/setupTests',
 				mockReset: true,
 			},
-		
-    }
-  } else {
-    // command === 'build'
-    return {
+		};
+	} else {
+		// command === 'build'
+		return {
 			plugins: [react()],
 			server: {
 				open: true,
 				proxy: {
 					'/api': {
-						target: 'http://walrus-app-ie6jv.ondigitalocean.app',
+						target: '/',
 					},
 				},
 			},
@@ -50,7 +48,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				setupFiles: 'src/setupTests',
 				mockReset: true,
 			},
-		
-    }
-  }
-})
+		};
+	}
+});

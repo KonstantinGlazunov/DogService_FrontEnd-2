@@ -1,0 +1,31 @@
+.wrapper {
+	background-color: #feb976;
+	width: 100%;
+}
+
+.admin_flex {
+	display: flex;
+	flex-direction: column;
+	background-image: url('./images/admin.jpg');
+	background-image-opacity: 0.5;
+	/* opacity: 0.5; */
+	background-repeat: repeat-y;
+	height: 1280px;
+	width: 1280px;
+	margin: 0 auto;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.cont {
+	height: 250px;
+	width: 900px;
+	border: 5px solid rgb(4, 110, 175);
+	text-align: center;
+	color: #ffffff;
+}
+.cont h1 {
+	font-size: 42px;
+	font-weight: 600;
+	margin-bottom: 130px;
+}

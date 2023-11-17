@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import authSlice from '../features/auth/authSlice';
 import tasksSlice from '../features/tasks/tasksSlice';
@@ -25,5 +26,3 @@ export type AppThunk<ReturnType = void> = ThunkAction<
 	unknown,
 	Action<string>
 >;
-
-

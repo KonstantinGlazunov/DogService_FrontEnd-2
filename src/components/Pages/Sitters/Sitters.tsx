@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import s from './Sitters.module.css';
 import dogImage from './images/dog.png';
 import Select from 'react-select';
-import betrou from './images/betreuung.png';
-import doginpark from './images/inpark.png';
-import aboutUs from './images/aboutUs.png';
+import betrou from './images/dogErz.jpg';
+import doginpark from './images/dalmatian.jpg';
+import aboutUs from './images/manAbousUs.jpg';
 
 function Sitters() {
 	const options = [
