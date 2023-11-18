@@ -46,7 +46,7 @@ function Navin(): JSX.Element {
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="me-auto">
 							<Nav.Link as={Link} to="/">
-								Home
+								Heim
 							</Nav.Link>
 							<Nav.Link as={Link} to="/clinics">
 								Clinics
@@ -55,10 +55,10 @@ function Navin(): JSX.Element {
 								Kennels
 							</Nav.Link>
 							<Nav.Link as={Link} to="/about">
-								About
+								Um
 							</Nav.Link>
 							<Nav.Link as={Link} to="/contact">
-								Contact
+								Kontakt
 							</Nav.Link>
 
 							{/* <NavDropdown title="" id="basic-nav-dropdown">
