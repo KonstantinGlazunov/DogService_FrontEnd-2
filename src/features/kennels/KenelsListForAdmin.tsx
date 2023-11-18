@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectKennels } from './selectors';
@@ -40,16 +41,13 @@ export default function KennelsListForAdmin(): JSX.Element {
 						<div>{kennel.postCode}</div>
 						<div>{kennel.address}</div>
 						<div>{kennel.telephoneNumber}</div>
-						{ <button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
+						<button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
 							Delete
 						</button>
-						<KennelEditForm kennelId={kennel.id} />
-						</button> }
-
+							<KennelEditForm kennelId={kennel.id} />
 					</li>
-				))}
-			</ul>
-			<div className={s.pagination}>
+			))}
+		</ul><div className={s.pagination}>
 				{Array.from({ length: Math.ceil(kennels.length / itemsPerPage) }).map((_, index) => (
 					<button key={index} onClick={() => setPage(index + 1)}>
 						{index + 1}

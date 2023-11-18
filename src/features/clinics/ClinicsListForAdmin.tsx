@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
@@ -40,15 +41,13 @@ export default function ClinicsListForAdmin(): JSX.Element {
 						<div>{clinic.postCode}</div>
 						<div>{clinic.address}</div>
 						<div>{clinic.telephoneNumber}</div>
-						{ <button type="button" onClick={() => dispatch(deleteClinic(clinic.id))}>
+						<button type="button" onClick={() => dispatch(deleteClinic(clinic.id))}>
 							Delete
 						</button>
-						<ClinicEditForm clinicId={clinic.id} />
-						</button> }
-					</li>
-				))}
-			</ul>
-			<div className={s.pagination}>
+							<ClinicEditForm clinicId={clinic.id} />
+							</li>
+					))}
+		</ul><div className={s.pagination}>
 				{Array.from({ length: Math.ceil(clinics.length / itemsPerPage) }).map((_, index) => (
 					<button key={index} onClick={() => setPage(index + 1)}>
 						{index + 1}
