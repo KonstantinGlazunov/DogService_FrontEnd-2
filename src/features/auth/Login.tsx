@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Form, useNavigate } from 'react-router-dom';
 import { useCallback, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -75,17 +76,17 @@ function Login(): JSX.Element {
 		<div className={block}>
 			<Nav>
 				<Button variant="primary" className="mr-2" onClick={handleShow1}>
-					Log In
+					Betreten
 				</Button>
 			</Nav>
 
 			<Modal show={show1} onHide={handleClose} id="modal-avtorisation">
 				<Modal.Header closeButton>
-					<Modal.Title>Log In</Modal.Title>
+					<Modal.Title>Betreten</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<form className="auth-form" onSubmit={handleSubmit}>
-						<h2>Вход</h2>
+						{/* <h2>Вход</h2> */}
 						{error && (
 							<div className="invalid-feedback mb-3" style={{ display: 'block' }}>
 								{error}
@@ -93,7 +94,7 @@ function Login(): JSX.Element {
 						)}
 						<div className="mb-3">
 							<label htmlFor="name-input" className="form-label">
-								Имя
+								E-mail
 							</label>
 							<input
 								type="text"
@@ -106,7 +107,7 @@ function Login(): JSX.Element {
 						</div>
 						<div className="mb-3">
 							<label htmlFor="password-input" className="form-label">
-								Пароль
+								Passwort
 							</label>
 							<InputGroup>
 								<FormControl
@@ -131,13 +132,13 @@ function Login(): JSX.Element {
 							</InputGroup>
 						</div>
 						<button type="submit" className="btn btn-primary">
-							Войти
+							Betreten
 						</button>
 					</form>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleClose}>
-						Close
+						Schließen
 					</Button>
 				</Modal.Footer>
 			</Modal>
