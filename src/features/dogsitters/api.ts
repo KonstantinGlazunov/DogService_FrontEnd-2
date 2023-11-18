@@ -16,7 +16,7 @@ export async function getByCityAndSize(
 		zip: zip || '',
 	};
 
-	Object.keys(queryParams).forEach((key) => queryParams[key] === '' && delete queryParams[key]);
+	// Object.keys(queryParams).forEach((key) => queryParams[key] === '' && delete queryParams[key]);
 	const queryString = new URLSearchParams(queryParams).toString();
 	const url = `/api/dog-sitters/search${queryString ? `?${queryString}` : ''}`;
 
