@@ -1,32 +1,24 @@
 .qwerty {
-    display: none;
+	display: none;
 }
 
 .backgraund {
-    background-color: #FFFFFF
+	background-color: #ffffff;
 }
 .cont {
-    
-    height: 150px;
-   
+	height: 150px;
 }
 
 .logo h1 {
-    font-size: calc(14px + 2vmin);
+	font-size: calc(14px + 2vmin);
 }
 
 .cont a {
-    font-size: calc(10px + 2vmin);
+	font-size: calc(10px + 2vmin);
 }
 
 @media screen and (max-width: 991px) {
-
-    .cont {
-    
-        height: 330px;
-        /* font-size: 18px; */
-        /* min-width: 320px */
-    }
-    
-
+	.cont {
+		height: 417px;
+	}
 }

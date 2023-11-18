@@ -1,14 +1,19 @@
 .qwertynone {
-    display: none;
+	display: none;
 }
 
 .qwertyblock {
-    display: block;
+	display: block;
 }
 
 .qwertyblock button {
-    margin:  2px 5px;
-    background-color: #777472;
-    border-color: #777472;
+	margin: 2px 5px;
+	/* background-color: #777472;
+	border-color: #777472; */
+}
 
+@media screen and (max-width: 1199px) {
+	.qwertyblock button {
+		margin-right: 0;
+	}
 }

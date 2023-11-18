@@ -4,20 +4,19 @@
 
 .qwertyblock {
 	display: block;
-	
 }
 
 .qwertyblock button {
-	margin: 2px 5px;
-	/* background-color: #777472; */
-	/* border-color: #777472; */
+	margin-right: 5px;
+	background-color: #777472;
+	border-color: #777472;
 }
 .qwertyblock img {
 	background-color: white;
 	cursor: pointer;
 }
 .qwertyblock img:active {
-  background-color:transparent;
+	background-color: transparent;
 }
 .qwertyb {
 	margin: 0;
@@ -31,4 +30,10 @@
 }
 .qwertyb .btn:active {
 	background-color: white;
+}
+
+@media screen and (max-width: 991px) {
+	.qwertyblock button {
+		margin: 3px 0 3px 0;
+	}
 }
