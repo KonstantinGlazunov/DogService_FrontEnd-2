@@ -7,7 +7,7 @@
 }
 
 .qwertyblock button {
-	margin-right: 150px;
+	/* margin-right: 150px; */
 	/* margin:  2px 5px; */
 	background-color: #777472;
 	border-color: #777472;
@@ -21,7 +21,7 @@
 	cursor: pointer;
 }
 .qwertyblock img:active {
-  background-color:transparent;
+	background-color: transparent;
 }
 .qwertyb {
 	margin: 0;
