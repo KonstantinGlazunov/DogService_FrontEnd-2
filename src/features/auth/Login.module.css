@@ -7,7 +7,7 @@
 }
 
 .qwertyblock button {
-	margin: 3px 0 3px 0;
+	margin-right: 5px;
 	background-color: #777472;
 	border-color: #777472;
 }
@@ -30,4 +30,10 @@
 }
 .qwertyb .btn:active {
 	background-color: white;
+}
+
+@media screen and (max-width: 991px) {
+	.qwertyblock button {
+		margin: 3px 0 3px 0;
+	}
 }

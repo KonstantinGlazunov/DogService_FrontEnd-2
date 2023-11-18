@@ -19,8 +19,6 @@
 
 @media screen and (max-width: 991px) {
 	.cont {
-		height: 451px;
-		/* font-size: 18px; */
-		/* min-width: 320px */
+		height: 417px;
 	}
 }
