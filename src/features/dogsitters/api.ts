@@ -10,13 +10,18 @@ export async function getByCityAndSize(
 	size: string,
 	zip: string
 ): Promise<Dogsitter[]> {
-	const queryParams = {
-		city: city || '',
-		'dog-size': size || '',
-		zip: zip || '',
-	};
+	const queryParams: {
+    city: string;
+    'dog-size': string;
+    zip: string;
+    [key: string]: string; // Индексная сигнатура
+} = {
+    city: city || '',
+    'dog-size': size || '',
+    zip: zip || '',
+};
 
-	// Object.keys(queryParams).forEach((key) => queryParams[key] === '' && delete queryParams[key]);
+	Object.keys(queryParams).forEach((key) => queryParams[key] === '' && delete queryParams[key]);
 	const queryString = new URLSearchParams(queryParams).toString();
 	const url = `/api/dog-sitters/search${queryString ? `?${queryString}` : ''}`;
 
