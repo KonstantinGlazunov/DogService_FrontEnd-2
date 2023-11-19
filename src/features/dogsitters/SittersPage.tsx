@@ -15,31 +15,61 @@ export default function SittersPage(): JSX.Element {
 	const [toggleStart, setToggleStart] = useState(false);
 	const [inputValue, setInputValue] = useState<string>('');
 	const [selectedSizes, setSelectedSizes] = useState<string>('');
-	//const [size, setSize] = useState<string>('');
+	const [error, setError] = useState<string>(''); // new error condition
+
 
 	const dispatch = useAppDispatch();
 
+	/*
 	function processInput(inputValue: string) {
 		if (/^\d+$/.test(inputValue)) {
-			//is a number?
+			is a number?
 			return { zip: inputValue, city: '' };
 		} else {
 			return { zip: '', city: inputValue };
 		}
 	}
+*/
+
+function processInput(inputValue: string) {
+  const letterRegex = /^[a-zA-ZäöüßÄÖÜ\s]+$/; //just letters and German
+  const digitRegex = /^\d{1,5}$/; // 5 digit limit
+
+  if (letterRegex.test(inputValue) && inputValue.trim() !== '') {
+    return { zip: '', city: inputValue };
+  } else if (digitRegex.test(inputValue)) {
+    return { zip: inputValue, city: '' };
+  } else {
+		setError('Bitte geben Sie nur Buchstaben oder Zahlen ein.');
+    
+    return { zip: '', city: '' };
+  }
+}
+
 
 	const toggleSize = (size: string) => {
 		setSelectedSizes(size);
 	};
+
+	
+
 	function handleSubmit(e: FormEvent<HTMLFormElement>): void {
 		//push-button function
 		const processedInput = processInput(inputValue);
 		const { zip: processedZip, city: processedCity } = processedInput;
+
+		if (!processedCity && !processedZip) {
+      setError('Bitte geben Sie nur Buchstaben oder Zahlen ein.');
+    } else {
+      setError('');
+
 		dispatch(
 			loadDogsittersByCityAndSize({ city: processedCity, size: selectedSizes, zip: processedZip })
 		);
 		e.preventDefault(); //so it doesn't go to the next page.
 		setToggleStart(true);
+		}
+		e.preventDefault();
 	}
 
 	return (
@@ -79,12 +109,14 @@ export default function SittersPage(): JSX.Element {
 						<div className={s.selectplz}>
 							<input
 								type="text"
-								className={`form-control`}
+								className={`form-control ${error ? 'is-invalid' : ''}`}
 								placeholder="PLZ oder Ort"
 								name="plz-or-city"
 								value={inputValue}
 								onChange={(e) => setInputValue(e.target.value)}
+								required
 							/>
+							{error && <div className="invalid-feedback">{error}</div>} 
 						</div>
 					</div>
 					{/* SIZE */}
