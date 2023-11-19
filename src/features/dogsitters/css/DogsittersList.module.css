@@ -36,12 +36,19 @@
   text-align: left;
   padding: 20;
   margin: 10px;
+}vulnerabilities
+
+.pagination {
+  padding: 20;
+  margin: 10px;
+  text-align: center;
 }
-
-
-
-.dogsitterLocation,
-.dogsitterZip,
-.dogsitterSize {
-  margin-top: 5px;
+.paginationButton{
+  background-color: #f9f9f9;
+  border: 2px solid #15BBDE;
+  border-radius: 5px;
+  margin: 10px;
+}
+.paginationPage{
+font-size: large;
 }
