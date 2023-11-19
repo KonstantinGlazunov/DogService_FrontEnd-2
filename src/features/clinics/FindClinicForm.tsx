@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { FormEvent, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { loadClinicsByCity } from './clinicsSlice';
@@ -16,7 +17,7 @@ export default function FindClinicForm(): JSX.Element {
 			<form onSubmit={search}>
 				<div className={s.selectplz}>
 					<p>City</p>
-					<select value={city} onChange={(e) => setCity(e.target.value)} >
+					<select value={city} onChange={(e) => setCity(e.target.value)}>
 						<option value="" disabled>
 							City
 						</option>

@@ -9,6 +9,7 @@ import KennelEditForm from './KennelEditForm';
 export default function KennelsListForAdmin(): JSX.Element {
 	const kennels = useAppSelector(selectKennels);
 	const dispatch = useAppDispatch();
+	const [isListOpen, setIsListOpen] = useState(false);
 	// const [showList, setShowList] = useState(false);
 
 	const [page, setPage] = useState(1);
@@ -16,23 +17,39 @@ export default function KennelsListForAdmin(): JSX.Element {
 
 	const handleClick = (): void => {
 		dispatch(loadKennels());
+		setIsListOpen(!isListOpen);
 	};
+
+	const handleClickClosed = (): void => {
+    setIsListOpen(false);
+  };
 
 	const startIndex = (page - 1) * itemsPerPage;
 	const endIndex = page * itemsPerPage;
 	const currentKennels = kennels.slice(startIndex, endIndex);
 
+	useEffect(() => {
+    setIsListOpen(false);
+  }, [page]);
+
 	return (
-		<div className={s.kennelContainer}>
+		<div className={`${s.liContainer} ${isListOpen ? '' : s.closed}`}>
+			<div className={s.btnforlist}>
 			<div className={s.btnList}>
-				<button type="submit" onClick={handleClick} className={s.btn}>
-					Swow kennels list
+			<button type="submit" onClick={handleClick} className={s.btn}>
+				{isListOpen ? 'Hide kennels list' : 'Show kennels list'}
 				</button>
 			</div>
 			{/* {showList} */}
-			<ul className={s.kennelsList}>
+			<div className={s.closeBtn}>
+			<button type='submit' onClick={handleClickClosed}>Schließen</button>
+			</div>
+			</div>
+			{isListOpen && (
+				<>
+			<ul className={s.lList}>
 				{currentKennels.map((kennel) => (
-					<li key={String(kennel.id)} className={s.kennelItem}>
+					<li key={String(kennel.id)} className={s.liItem}>
 						<div className={s.dogName}>{kennel.name}</div>
 						<div>{kennel.description}</div>
 						<div>{kennel.webSite}</div>
@@ -47,13 +64,16 @@ export default function KennelsListForAdmin(): JSX.Element {
 							<KennelEditForm kennelId={kennel.id} />
 					</li>
 			))}
-		</ul><div className={s.pagination}>
+		</ul>
+		<div className={s.pagination}>
 				{Array.from({ length: Math.ceil(kennels.length / itemsPerPage) }).map((_, index) => (
 					<button key={index} onClick={() => setPage(index + 1)}>
 						{index + 1}
 					</button>
 				))}
 			</div>
+			</>
+			)}
 		</div>
 	);
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState, FormEvent } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { loadKennelsByCity } from './kennelsSlice';

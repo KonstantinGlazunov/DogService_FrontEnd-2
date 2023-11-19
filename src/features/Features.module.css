@@ -1,0 +1,147 @@
+.liContainer {
+  width: 90vw;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+	margin: 0 auto;
+}
+
+
+#listSection {
+  display: flex;
+  justify-content: center;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	align-items: center;
+  width: 90vw;
+  height: 150vh;
+  background-color: rgb(230, 230, 212);
+  padding: 0;
+  font-size: 12px;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+.listContSec {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 90%;
+	margin: 0 auto;
+}
+.lList {
+	display: grid;
+  box-sizing: border-box;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	list-style: none;
+	padding: 3px;
+	margin: 0;
+  overflow: hidden;
+  color: #000;
+	box-sizing: border-box;
+}
+
+.btnList .btn {
+	justify-content: center;
+	margin: 5px;
+}
+.btn {
+	width: 150px;
+	padding: 0;
+	background-color: #15bbde;
+	color: white;
+	border: 2px solid #15bbde;
+	border-radius: 15px;
+}
+.btn:hover {
+	font-weight: 400;
+}
+.liItem {
+  flex-direction: column;
+  display: flex;
+	/* width: 100%; */
+	box-sizing: border-box;
+	border: 1px solid #d2c596;
+  justify-content: space-between;
+  
+	/* padding: 3px;
+	border-radius: 8px; */
+}
+.lilItem:hover {
+	background-color: #352b0a;
+  box-sizing: border-box;
+  border: 1px solid #d2c596;
+  padding: 8px;
+  border-radius: 8px;
+  height: 100%;
+	cursor: pointer;
+	/* font-size: 20px; */
+}
+
+/* .closed:active {
+	display: none;
+} */
+.addedNew {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	width:90vw;
+	height: 90vh;
+	background-color: rgb(234, 156, 156);
+	margin: 0 auto;
+}
+.addedNew form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50vw;
+	padding: 0;
+	margin: 15px;
+}
+
+.createCont {
+	display: flex;
+	justify-content: center;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 90vw;
+  max-width: 50vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+	.lList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	#listSection {
+    width: 90vw;
+  }
+	.lList {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.addedNew {
+    width: 90vw; 
+  }
+	.addedNew input{
+    width: 30vw; 
+		margin: 0;
+  }
+	.createCont {
+		width: 30vw; 
+		margin: 0 auto;
+	}
+	.addedNew,
+  .addedNew form,
+  .createCont {
+    width: 90vw;
+    max-width: none;
+  }
+}

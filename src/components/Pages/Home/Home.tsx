@@ -14,14 +14,9 @@ const Home = (): JSX.Element => {
 
 	return (
 		<div>
-			{user?.role === 'ADMIN' ? (
+			{/* {user?.role === 'ADMIN' ? ( */}
 				<Admin />
-			) : (
-				<>
-					<Carousels />
-				  <SittersPage />
-				</>
-			)}
+		/
 		</div>
 	);
 };
