@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+import React from 'react'
 import styles from './Admin.module.css';
 import ClinicsOperatons from './Clinics/ClinicsOperatons';
 import KenelsOperatons from './Kenels/KenelsOperatons';

@@ -1,8 +1,14 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { FormEvent, useEffect, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { createClinic } from './clinicsSlice';
+import s from '../Features.module.css';
 
-export default function ClinicCreate(): JSX.Element {
+export default function ClinicCreate({
+	setShowCreateForm,
+}: {
+	setShowCreateForm: React.Dispatch<React.SetStateAction<boolean>>;
+}): JSX.Element {
 	const [name, setName] = useState<string>('');
 	const [description, setDescription] = useState<string>('');
 	const [webSite, setWebSite] = useState<string>('');
@@ -75,6 +81,7 @@ export default function ClinicCreate(): JSX.Element {
 				setPostCode('');
 				setAddress('');
 				setTelephoneNumber('');
+				setShowCreateForm(false);
 			});
 		}
 	}
@@ -90,7 +97,7 @@ export default function ClinicCreate(): JSX.Element {
 	}, [successMessage]);
 
 	return (
-		<div>
+		<div className={s.addedNew}>
 			<h1>Add new clinic</h1>
 			<form onSubmit={handleSubmit}>
 				{error && <p>{error}</p>}

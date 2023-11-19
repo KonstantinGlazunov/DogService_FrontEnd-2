@@ -1,10 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectClinics } from './selector';
-import { deleteClinic, loadClinics } from './clinicsSlice';
+import { loadClinics } from './clinicsSlice';
 import s from '../../components/Pages/Clinics/Clinics.module.css';
-import ClinicEditForm from './ClinicEditForm';
+
 
 export default function ClinicsList(): JSX.Element {
 	const clinics = useAppSelector(selectClinics);

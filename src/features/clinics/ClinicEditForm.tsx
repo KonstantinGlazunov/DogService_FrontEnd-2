@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { FormEvent, useEffect, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { updateClinic } from './clinicsSlice';
@@ -101,7 +102,7 @@ export default function ClinicEditForm(props: { clinicId: number }): JSX.Element
 	return (
 		<div>
 			<button type="submit" onClick={handleClickUpdate}>
-				{showForm ? 'Close' : 'Update'}
+				{showForm ? 'Schließen' : 'Actualisieren'}
 			</button>
 			{showForm && (
 				<form onSubmit={handleSubmit}>
@@ -154,7 +155,7 @@ export default function ClinicEditForm(props: { clinicId: number }): JSX.Element
 						value={telephoneNumber}
 						onChange={(e) => setTelephoneNumber(e.target.value)}
 					/>
-					<button type="submit">Save changes</button>
+					<button type="submit">Änderungen speichern</button>
 					<div> {successMessage} </div>
 				</form>
 			)}

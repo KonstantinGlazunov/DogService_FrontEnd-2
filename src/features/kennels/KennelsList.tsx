@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react/react-in-jsx-scope */
+import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectKennels } from './selectors';
-import { loadKennels, deleteKennel } from './kennelsSlice';
+import { loadKennels } from './kennelsSlice';
 import s from '../../components/Pages/Kennel/Kennels.module.css';
-import KennelEditForm from './KennelEditForm';
+
 
 export default function KennelsList(): JSX.Element {
 	const kennels = useAppSelector(selectKennels);

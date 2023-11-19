@@ -10,8 +10,9 @@
 	background-image-opacity: 0.5;
 	/* opacity: 0.5; */
 	background-repeat: repeat-y;
-	height: 1280px;
-	width: 1280px;
+	background-size: 100%;
+	height: 200vh;
+	width: 100%;
 	margin: 0 auto;
 	justify-content: space-around;
 	align-items: center;
@@ -19,13 +20,25 @@
 
 .cont {
 	height: 250px;
-	width: 900px;
+	width: 85%;
 	border: 5px solid rgb(4, 110, 175);
 	text-align: center;
 	color: #ffffff;
+	margin: 0 auto;
 }
 .cont h1 {
 	font-size: 42px;
 	font-weight: 600;
-	margin-bottom: 130px;
+	margin-bottom: 13px;
+}
+
+@media (max-width: 900px) {
+	.cont h1 {
+		font-size: 30px;
+		font-weight: 600;
+		margin: 0 auto;
+	}
+	.cont {
+		width: 100%;
+	}
 }
