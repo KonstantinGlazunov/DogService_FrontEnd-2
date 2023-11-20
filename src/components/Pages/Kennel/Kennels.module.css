@@ -1,12 +1,12 @@
 #mainSection {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-image: url('./img/bcKl.jpg');
-  background-size: cover;
-  width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-image: url('./img/bcKl.jpg');
+	background-size: cover;
+	width: 100%;
 	height: 90vh;
-  margin-top: 30px;
+	margin-top: 30px;
 }
 .title {
 	color: rgb(0, 1, 15);
@@ -14,14 +14,14 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-  margin: 0 auto;
-  text-shadow: 2px 2px 4px rgb(148, 235, 145);
+	margin: 0 auto;
+	text-shadow: 2px 2px 4px rgb(148, 235, 145);
 }
 .h1title {
-  text-align: center;
+	text-align: center;
 }
 .ptitle {
-  font-size: 25px;
+	font-size: 25px;
 }
 .searchSitters {
 	width: 70%;
@@ -33,262 +33,255 @@
 	border-radius: 20px;
 	margin-top: 50px;
 	color: black;
-  padding: 15px;
-
+	padding: 15px;
 }
 .searchSitters .descrSearch {
 	display: flex;
-	margin: 0 ;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 	justify-content: space-between;
-  width: 100%;
+	width: 100%;
 }
 .descr1,
 .descr2 {
 	margin: 0;
 	padding: 0;
-  
 }
-.descr1 p, .descr2 p {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
+.descr1 p,
+.descr2 p {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
 }
 .descr1 .pHunde {
-  color: #15BBDE;
-  padding-left: 15px;
+	color: #15bbde;
+	padding-left: 15px;
 }
 .descr1 .imgDescr {
-  display: flex;
-  text-align: center;
-  color: black;
-  
-  
+	display: flex;
+	text-align: center;
+	color: black;
 }
 .imgDescr img {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 .pdescr2 {
-  color: #6F7C7E;
+	color: #6f7c7e;
 }
 
 .searchSitters .selectDate {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 0 ;
-  padding: 0;
-
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
 }
 .selectDate p {
-  text-align: center;
+	text-align: center;
 }
 
-.searchSitters .selectplz, .searchSitters .selDate {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  
+.searchSitters .selectplz,
+.searchSitters .selDate {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
 }
 .selectplz options {
-  text-align: center;
+	text-align: center;
 }
 .selectplz select {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .applySelect {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
 }
 .btn {
-  width: 150px;
-  padding: 0;
-  background-color: #15BBDE;
-  color: white;
-  border: 2px solid #15BBDE;
-  border-radius: 15px;
+	width: 150px;
+	padding: 0;
+	background-color: #15bbde;
+	color: white;
+	border: 2px solid #15bbde;
+	border-radius: 15px;
 }
 .btn:hover {
-  font-weight: 600;
-  width: 200px;
+	font-weight: 600;
+	width: 200px;
 }
 .kennelsSection {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 85%;
-  margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 85%;
+	margin: 0 auto;
 }
 .kenDescr {
-  text-align: center;
-  /* transition: background-color 0.3s, font-size 0.3s; */
+	text-align: center;
+	/* transition: background-color 0.3s, font-size 0.3s; */
 }
 .kenDescr:hover {
-  background-color: #e8d8d8;
-  font-size: 30px;
+	background-color: #e8d8d8;
+	font-size: 30px;
 }
 .imgRassen {
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	margin: 0 auto;
 }
 .rasTitle {
-  text-align: center;
+	text-align: center;
 }
 
 .dogOne img,
 .dogtwo img {
-  width: 95%;
-  height: 400px;
-  border: 4px solid #e8d8d8;
-  border-radius: 15px;
-  margin: 7px;
+	width: 95%;
+	height: 400px;
+	border: 4px solid #e8d8d8;
+	border-radius: 15px;
+	margin: 7px;
 }
 .dogOne,
-.dogtwo  {
-  display: flex;
-  justify-content: center;
+.dogtwo {
+	display: flex;
+	justify-content: center;
 }
 
 #clinicsSection {
-  background-color: #ebe6d2;
-  width: 100%;
-  padding: 8px;
-  display: flex;
-  justify-content: center;
+	background-color: #ebe6d2;
+	width: 100%;
+	padding: 8px;
+	display: flex;
+	justify-content: center;
 }
-.btnList{
-  width: 90%;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
-  margin: 0 auto;
+.btnList {
+	width: 90%;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	text-align: center !important;
+	margin: 0 auto;
 }
 
 .btnList .btn {
-  justify-content: center;
-  margin: 15px;
-
+	justify-content: center;
+	margin: 15px;
 }
 .kennelsList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  list-style: none;
-  padding: 10px;
-  margin: 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
 }
 
 .kennelItem {
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #d2c596;padding: 8px;
-  border-radius: 8px;
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #d2c596;
+	padding: 8px;
+	border-radius: 8px;
 }
 .kennelItem:hover {
-  background-color: #d2c596;
-  font-size: 20px;
+	background-color: #d2c596;
+	font-size: 20px;
 }
 .dogName {
-  text-align: center;
-  font-weight: bold;
+	text-align: center;
+	font-weight: bold;
 }
 .pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
+	display: flex;
+	justify-content: center;
+	margin-top: 16px;
 }
 
 .pagination button {
-  margin: 0 8px;
-  padding: 8px;
-  cursor: pointer;
-  background-color: #ddd;
-  border: 1px solid #ccc;
+	margin: 0 8px;
+	padding: 8px;
+	cursor: pointer;
+	background-color: #ddd;
+	border: 1px solid #ccc;
 }
 
 .pagination button:hover {
-  background-color: #bbb;
+	background-color: #bbb;
 }
 
-
 @media (max-width: 900px) {
-  #mainSection {
-    padding: 0;
-    height: 500px;
-    align-content: center;
-    background-size:cover;
-  }
-  .searchSitters {
+	#mainSection {
+		padding: 0;
+		height: 500px;
+		align-content: center;
+		background-size: cover;
+	}
+	.searchSitters {
 		height: 200px;
 		padding: 0;
 		width: 95%;
-    margin-top: 10px;
+		margin-top: 10px;
 	}
 	.kennelsList {
 		grid-template-columns: repeat(2, 1fr);
 		padding: 3px;
 	}
-  .dogOne img {
-  height: 200px;
-}
-.kenDescr:hover {
-  font-size: 20px;
-}
-.kennelsList {
-  grid-template-columns: repeat(2, 1fr);
-}
-.ptitle {
-  font-size: 15px;
-}
-#Rassen {
-  padding: 5px;
-}
-
-
+	.dogOne img {
+		height: 200px;
+	}
+	.kenDescr:hover {
+		font-size: 20px;
+	}
+	.kennelsList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.ptitle {
+		font-size: 15px;
+	}
+	#Rassen {
+		padding: 5px;
+	}
 }
 @media (max-width: 600px) {
-  #mainSection {
-    height: auto;
-  }
-  .searchSitters {
-    height: auto;
-    margin-top: 10px;
-  }
-  .kennelsSection {
-    width: 95%; 
-    margin: 0 auto;
-  }
+	#mainSection {
+		height: auto;
+	}
+	.searchSitters {
+		height: auto;
+		margin-top: 10px;
+	}
+	.kennelsSection {
+		width: 95%;
+		margin: 0 auto;
+	}
 
-  .kenDescr {
-    font-size: 15px; 
-    transition: none;
-  }
-  .kennelsList {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 3px;
-  }
-  .dogOne img {
-    height: auto; 
-    max-width: 80%;
-  }
-  .dogOne {
-    display: flex;
-    flex-direction: column;
-  }
-  .kenDescr:hover {
-    font-size: 20px;
-  }
-  .ptitle {
-    font-size: 15px; 
-  }
-  #Rassen {
-    padding: 5px; 
-  }
+	.kenDescr {
+		font-size: 15px;
+		transition: none;
+	}
+	.kennelsList {
+		grid-template-columns: repeat(1, 1fr);
+		padding: 3px;
+	}
+	.dogOne img {
+		height: auto;
+		/* max-width: 80%; */
+	}
+	.dogOne {
+		display: flex;
+		flex-direction: column;
+	}
+	.kenDescr:hover {
+		font-size: 20px;
+	}
+	.ptitle {
+		font-size: 15px;
+	}
+	#Rassen {
+		padding: 5px;
+	}
 }
