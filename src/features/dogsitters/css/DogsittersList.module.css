@@ -38,10 +38,18 @@
   margin: 10px;
 }
 
-
-
-.dogsitterLocation,
-.dogsitterZip,
-.dogsitterSize {
-  margin-top: 5px;
+.pagination {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+.paginationButton{
+  background-color: #f9f9f9;
+  border: 2px solid #15BBDE;
+  border-radius: 5px;
+  margin: 10px;
+}
+.paginationPage{
+font-size: large;
 }
