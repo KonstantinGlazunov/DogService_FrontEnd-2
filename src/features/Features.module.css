@@ -15,7 +15,7 @@
 	align-items: center;
   width: 90vw;
   height: 150vh;
-  background-color: rgb(230, 230, 212);
+  /* background-color: rgb(230, 230, 212); */
   padding: 0;
   font-size: 12px;
 	box-sizing: border-box;
@@ -27,6 +27,9 @@
 	text-align: center;
 	width: 90%;
 	margin: 0 auto;
+}
+.background {
+	background-color: rgb(230, 230, 212);
 }
 .lList {
 	display: grid;
