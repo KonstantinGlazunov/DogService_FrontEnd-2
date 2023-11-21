@@ -37,12 +37,12 @@ export default function KennelsListForAdmin(): JSX.Element {
 			<div className={s.btnforlist}>
 			<div className={s.btnList}>
 			<button type="submit" onClick={handleClick} className={s.btn}>
-				{isListOpen ? 'Hide kennels list' : 'Show kennels list'}
+				{isListOpen ? 'Скрыть список питомников' : 'Показать список питомников'}
 				</button>
 			</div>
 			{/* {showList} */}
 			<div className={s.closeBtn}>
-			<button type='submit' onClick={handleClickClosed}>Schließen</button>
+			<button type='submit' onClick={handleClickClosed}>Закрыть</button>
 			</div>
 			</div>
 			{isListOpen && (
@@ -59,7 +59,7 @@ export default function KennelsListForAdmin(): JSX.Element {
 						<div>{kennel.address}</div>
 						<div>{kennel.telephoneNumber}</div>
 						<button type="button" onClick={() => dispatch(deleteKennel(kennel.id))}>
-							Delete
+						Удалить
 						</button>
 							<KennelEditForm kennelId={kennel.id} />
 					</li>

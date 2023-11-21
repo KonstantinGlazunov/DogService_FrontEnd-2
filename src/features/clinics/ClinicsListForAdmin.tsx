@@ -33,18 +33,19 @@ export default function ClinicsListForAdmin(): JSX.Element {
   }, [page]);
 
 	return (
-		<div className={`${s.liContainer} ${isListOpen ? '' : s.closed}`}>
+		<div className={`${s.liContainer}  ${isListOpen ? s.background : s.closed}`}>
 			<div className={s.btnforlist}>
 			<div className={s.btnList}>
 			<button type="submit" onClick={handleClick} className={s.btn}>
-          {isListOpen ? 'Hide clinic list' : 'Show clinic list'}
+          {isListOpen ? 'Скрыть список клиник' : 'Показать список клиник'}
         </button>
 			</div>
 			<div className={s.closeBtn}>
-				<button type='submit' onClick={handleClickClosed}>Schließen</button>
+				<button type='submit' onClick={handleClickClosed}>Закрыть</button>
 			</div>
 			</div>
 			{/* {showList} */}
+			{isListOpen && (
 			<ul className={s.lList}>
 				{currentClinics.map((clinic) => (
 					<li key={String(clinic.id)} className={s.liItem}>
@@ -57,12 +58,13 @@ export default function ClinicsListForAdmin(): JSX.Element {
 						<div>{clinic.address}</div>
 						<div>{clinic.telephoneNumber}</div>
 						<button type="button" onClick={() => dispatch(deleteClinic(clinic.id))}>
-							Delete
+						Удалить
 						</button>
 							<ClinicEditForm clinicId={clinic.id} />
 							</li>
 					))}
 		</ul>
+		)}
 		<div className={s.pagination}>
 				{Array.from({ length: Math.ceil(clinics.length / itemsPerPage) }).map((_, index) => (
 					<button key={index} onClick={() => setPage(index + 1)}>

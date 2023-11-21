@@ -12,9 +12,14 @@ function ButtonsClinic() {
 
 	const handleAllSeeClick = () => {
 		setShowClinics(!showClinics);
+		setShowCreateForm(false);
 	};
   const handleCreateClick = () => {
 		setShowCreateForm(true);
+		setShowClinics(false);
+	};
+	const handleCreateFormClose = () => {
+		setShowCreateForm(false);
 	};
 
   return (
@@ -22,7 +27,7 @@ function ButtonsClinic() {
 			{!showClinics ? (
 				<>
 					<Button variant="primary" onClick={handleAllSeeClick}>
-						Alles sehen
+					Посмотреть всех
 					</Button>{' '}
 					{/* <Button variant="success">Success</Button> <Button variant="warning">Warning</Button>{' '}
 			<Button variant="danger">Danger</Button> <Button variant="info">Info</Button>{' '}
@@ -38,13 +43,13 @@ function ButtonsClinic() {
 			{!showCreateForm ? (
 				<>
 					<Button variant="secondary" onClick={handleCreateClick}>
-						Hinzufügen
+					Добавить
 					</Button>{' '}
 				</>
 			) : (
 				<div className={s.createCont}>
 					<section id={s.added}>
-						{showCreateForm && <ClinicCreate setShowCreateForm={setShowCreateForm} />}
+						{showCreateForm && <ClinicCreate setShowCreateForm={handleCreateFormClose} />}
 					</section>
 				</div>
 			)}

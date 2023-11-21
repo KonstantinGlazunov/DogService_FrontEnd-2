@@ -7,9 +7,9 @@ import { loadDogsittersByCityAndSize } from './dogsittersSlice';
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import s from './css/SittersPage.module.css';
 import dogImage from './images/dog.png';
-import betrou from './images/betreuung.png';
-import doginpark from './images/inpark.png';
-import aboutUs from './images/aboutUs.png';
+import betrou from './images/dogErz.jpg';
+import doginpark from './images/dalmatian.jpg';
+import aboutUs from './images/manAbousUs.jpg';
 
 export default function SittersPage(): JSX.Element {
 	const [toggleStart, setToggleStart] = useState(false);
