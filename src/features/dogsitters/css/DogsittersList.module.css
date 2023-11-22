@@ -1,55 +1,77 @@
 .dogsittersListContainer {
-  margin-top: 30px;
-  padding: 15px;
+	margin-top: 30px;
+	padding: 15px;
+}
+
+.dogs_text {
+	font-size: 24px;
+	/* border: #15bbde solid 5px; */
+	margin-right: 10px;
+	text-align: center;
+}
+.wrap {
+	width: 400px;
+	height: 400px;
+}
+.data {
+	width: 200px;
+	height: 200px;
+}
+
+.foto {
+	width: 200px;
+	height: 200px;
+}
+
+.dogsnone {
+	display: none;
 }
 
 .dogsittersListTitle {
-  text-align: center;
-  color: #15BBDE;
+	text-align: center;
+	color: #15bbde;
 }
 
 .dogsittersList {
-  list-style:none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 .dogsitterName {
-  font-weight: bold;
+	font-weight: bold;
 }
-
-
 
 .dogsitterItem {
-  width: 65%;
-  margin: 10px auto; /* Center the element horizontally with top and bottom margin */
-  background-color: #f9f9f9;
-  border: 2px solid #15BBDE;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px; /* Added 'px' to specify the unit for padding */
-  line-height: 1;
-  height: auto;
+	width: 45%;
+	margin: 10px auto; /* Center the element horizontally with top and bottom margin */
+	background-color: #f9f9f9;
+	border: 2px solid #15bbde;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px; /* Added 'px' to specify the unit for padding */
+	line-height: 1;
+	height: auto;
 }
 
-.dogsitterData{
-  text-align: left;
-  padding: 20;
-  margin: 10px;
+.dogsitterData {
+	text-align: left;
+	padding: 20;
+	margin: 10px;
 }
 
 .pagination {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
 }
-.paginationButton{
-  background-color: #f9f9f9;
-  border: 2px solid #15BBDE;
-  border-radius: 5px;
-  margin: 10px;
+.paginationButton {
+	background-color: #f9f9f9;
+	border: 2px solid #15bbde;
+	border-radius: 5px;
+	margin: 10px;
 }
-.paginationPage{
-font-size: large;
+.paginationPage {
+	font-size: large;
 }

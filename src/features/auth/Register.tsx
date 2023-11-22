@@ -1,13 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable prettier/prettier */
-/* eslint-disable import/no-extraneous-dependencies */
 import { Button, Col, Form, InputGroup, Modal, Nav, Row, FormControl } from 'react-bootstrap';
 //import styles from './Registration.module.css';
 import { ChangeEvent, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// eslint-disable-next-line import/named
 import { registerUser, resetRegisterFormError, login, registerSetter } from './authSlice';
 import { selectRegisterFormError } from './selectors';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';

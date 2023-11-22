@@ -30,7 +30,7 @@ export const registerUser = createAsyncThunk('api/register', async (data: Regist
 	// if (!data.email.trim() || !data.password.trim()) {
 	// 	throw new Error('Не все поля заполнены');
 	// }
-	// eslint-disable-next-line import/namespace, @typescript-eslint/no-unsafe-call
+
 	return api.registerUser(data);
 });
 
