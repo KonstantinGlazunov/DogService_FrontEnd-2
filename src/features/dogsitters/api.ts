@@ -5,21 +5,33 @@ export async function getAll(): Promise<Dogsitter[]> {
 	return res.json();
 }
 
+
+export async function getById(id: number): Promise<Dogsitter> {
+	const res = await fetch(`/api/dog-sitters/id-search?id=${id}`);
+	return res.json();
+}
+
+export async function deleteDogsitterByID(id: number): Promise<Dogsitter[]> {
+	const res = await fetch(`/api/dog-sitters/${id}`, 	{	method: 'DELETE'});
+	return res.json();
+}
+
+
 export async function getByCityAndSize(
 	city: string,
 	size: string,
 	zip: string
 ): Promise<Dogsitter[]> {
 	const queryParams: {
-    city: string;
-    'dog-size': string;
-    zip: string;
-    [key: string]: string; // Индексная сигнатура
-} = {
-    city: city || '',
-    'dog-size': size || '',
-    zip: zip || '',
-};
+		city: string;
+		'dog-size': string;
+		zip: string;
+		[key: string]: string; // Индексная сигнатура
+	} = {
+		city: city || '',
+		'dog-size': size || '',
+		zip: zip || '',
+	};
 
 	Object.keys(queryParams).forEach((key) => queryParams[key] === '' && delete queryParams[key]);
 	const queryString = new URLSearchParams(queryParams).toString();

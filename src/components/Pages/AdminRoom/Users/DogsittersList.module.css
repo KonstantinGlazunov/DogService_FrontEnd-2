@@ -1,0 +1,69 @@
+
+.searchSitters {
+  width: 50px;
+  margin-left:10px
+  }
+
+  .allSitters {
+    width: 350px;
+    margin-top: 40px;
+    margin-left: 200px;
+  }
+  
+.selectDate{
+  width: 100px;
+  margin-left: 5px;
+}
+
+.applySelect {
+  width: 110px;
+  margin-left:50;
+  margin-top: 5px;
+}
+
+.dogsittersListContainer {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.dogsittersListTitle {
+  text-align: center;
+  color: #000000;
+  background-color:  #f9f9f9;
+}
+
+.dogsitterItem {
+  width: 50%;
+  margin: 5px auto; /* Center the element horizontally with top and bottom margin */
+  background-color: #f9f9f9;
+  border: 2px solid #15BBDE;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1px; /* Added 'px' to specify the unit for padding */
+  line-height: 1;
+  height: auto;
+}
+
+.dogsitterData{
+  text-align: left;
+  padding: right 30px top 20px;
+  margin: 5px;
+  color: black;
+
+}
+.pagination {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+.paginationButton{
+  background-color: #f9f9f9;
+  border: 2px solid #15BBDE;
+  border-radius: 5px;
+  margin: 10px;
+}
+.paginationPage{
+font-size: large;
+}

@@ -33,14 +33,14 @@ export default function SittersPage(): JSX.Element {
 
 function processInput(inputValue: string) {
   const letterRegex = /^[a-zA-ZäöüßÄÖÜ\s]+$/; //just letters and German
-  const digitRegex = /^\d{1,5}$/; // 5 digit limit
+  const digitRegex = /^\d{5}$/; // 5 digit limit
 
   if (letterRegex.test(inputValue) && inputValue.trim() !== '') {
     return { zip: '', city: inputValue };
   } else if (digitRegex.test(inputValue)) {
     return { zip: inputValue, city: '' };
   } else {
-		setError('Bitte geben Sie nur Buchstaben oder Zahlen ein.');
+		setError('Bitte geben Sie nur Buchstaben oder Plz ein.');
     
     return { zip: '', city: '' };
   }
@@ -59,7 +59,7 @@ function processInput(inputValue: string) {
 		const { zip: processedZip, city: processedCity } = processedInput;
 
 		if (!processedCity && !processedZip) {
-      setError('Bitte geben Sie nur Buchstaben oder Zahlen ein.');
+      setError('Bitte geben Sie nur Buchstaben oder Plz ein.');
     } else {
       setError('');
 
