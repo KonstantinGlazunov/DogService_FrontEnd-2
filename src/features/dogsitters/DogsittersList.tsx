@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/react-in-jsx-scope */
 import { useAppSelector } from '../../app/hooks';
@@ -8,10 +9,20 @@ import { Button, Modal } from 'react-bootstrap';
 import { selectUser } from '../auth/selectors';
 import User from '../auth/types/User';
 import img from './images/img1.png';
+import imgD1 from './images/img.png';
+import imgD2 from './images/img2.png';
+import imgD3 from './images/img3.png';
+// import imgD4 from './images/img4.png';
+// import imgD5 from './images/img5.png';
 
-let dogSitId = 0;
-let dogSitFirstName = '';
+// const images = [imgD1, imgD2, imgD3, imgD4, imgD5];
+const images = [img, imgD1, imgD2, imgD3];
+
+const dogSitId = 0;
+const dogSitFirstName = '';
 let imeg = 0;
+
+const adres1 = '';
 
 //console.log(imeg);
 
@@ -32,7 +43,7 @@ export default function DogsittersList(): JSX.Element {
 	const [currentPage, setCurrentPage] = useState<number>(1);
 	const [showConf, setShowConf] = useState(false);
 	const handleCloseConf = () => setShowConf(false);
-
+	const currentImage = images[imeg];
 	const totalPages = Math.ceil(dogsitters.length / itemsPerPage);
 	const indexOfLastDogSitter = currentPage * itemsPerPage;
 	const indexOfFirstDogSitter = indexOfLastDogSitter - itemsPerPage;
@@ -88,7 +99,10 @@ export default function DogsittersList(): JSX.Element {
 				<ul className={s.dogsitterList}>
 					{currentDogSitters.map((dogsitter) => (
 						<li key={dogsitter.id} className={s.dogsitterItem}>
-							{/* <div className={s.wrap}>
+							<div className={s.ds}>
+								<h4>BEREIT, ZEIT MIT IHREM HUND ZU VERBRINGEN</h4>
+							</div>
+							<div className={s.wrap}>
 								<div className={s.data}>
 									<p>
 										<span className={s.dogs_text}> {dogsitter.firstName}</span>
@@ -98,31 +112,13 @@ export default function DogsittersList(): JSX.Element {
 									<p className={s.dogs_text}>{dogsitter.city}</p>
 									<p className={s.dogs_text}>{dogsitter.email}</p>
 								</div>
-								<div className={s.foto}></div>
-							</div> */}
-							<p className={s.dogs_text}>
-								<span className={s.dogs_text}> {dogsitter.firstName}</span>
-								<span className={s.dogs_text}> {dogsitter.lastName}</span>
-								<span className={s.dogs_text}> {dogsitter.city}</span>
-								<span className={s.dogs_text}> {dogsitter.email}</span>
-								{/* <span className={s.dogs_text}> {per}</span> */}
-								<span className={s.dogs_text}>
-									{' '}
-									<img className="d-block w-100" src={img} alt="dog_1" />
-								</span>
-
-								<span className={s.dogs_text}>
-									{' '}
-									{/* <img className="d-block w-100" src="../images/img1.png" alt="dog_1" /> */}
-								</span>
-								<Button variant="warning" onClick={handle}>
-									WÄHLEN
-								</Button>
-								<span className={s.dogsnone}>
-									{(dogSitId = dogsitter.id)}
-									{(dogSitFirstName = dogsitter.firstName)}
-								</span>
-							</p>
+								<div className={s.foto}>
+									<span className={s.dogs_text}>
+										{' '}
+										<img className="d-block w-100" src={currentImage} alt="dog_1" />
+									</span>
+								</div>
+							</div>
 						</li>
 					))}
 				</ul>

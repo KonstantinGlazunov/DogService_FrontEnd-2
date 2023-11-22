@@ -10,17 +10,28 @@
 	text-align: center;
 }
 .wrap {
-	width: 400px;
+	display: flex;
+	width: 100%;
 	height: 400px;
+	justify-content: center;
+	align-items: center;
+	border: #de1526 solid 2px;
+}
+
+.ds {
+	width: 100%;
+	height: 50px;
 }
 .data {
-	width: 200px;
-	height: 200px;
+	width: 49%;
+	height: 350px;
+	border: #242222 solid 2px;
 }
 
 .foto {
-	width: 200px;
-	height: 200px;
+	width: 49%;
+	height: 350px;
+	border: #155bde solid 2px;
 }
 
 .dogsnone {
