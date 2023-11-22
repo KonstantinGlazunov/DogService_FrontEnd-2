@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable react/react-in-jsx-scope */
 import Carousels from './Carousels/Carousels';
 import Contents from './Content/Contents';
 import Sitters from '../Sitters/Sitters';
@@ -8,7 +8,6 @@ import Admin from '../AdminRoom/Admin';
 
 import SittersPage from '../../../features/dogsitters/SittersPage';
 
-// eslint-disable-next-line prettier/prettier
 const Home = (): JSX.Element => {
 	const user = useAppSelector(selectUser);
 
@@ -19,7 +18,7 @@ const Home = (): JSX.Element => {
 			) : (
 				<>
 					<Carousels />
-				  <SittersPage />
+					<SittersPage />
 				</>
 			)}
 		</div>
