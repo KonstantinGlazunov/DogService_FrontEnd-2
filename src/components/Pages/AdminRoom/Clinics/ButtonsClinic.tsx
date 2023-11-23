@@ -21,6 +21,10 @@ function ButtonsClinic() {
 	const handleCreateFormClose = () => {
 		setShowCreateForm(false);
 	};
+	
+	const handleListClose = () => {
+		setShowClinics(false);
+	};
 
   return (
    <>
@@ -36,7 +40,7 @@ function ButtonsClinic() {
 			) : (
 				<div className={s.listContSec}>
 					<section id={s.listSection}>
-						<ClinicsListForAdmin />
+						<ClinicsListForAdmin onClose={handleListClose} />
 					</section>
 				</div>
 			)}

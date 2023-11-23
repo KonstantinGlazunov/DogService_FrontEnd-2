@@ -33,6 +33,9 @@ export default function ButtonsUsers(): JSX.Element {
 	const handleAllSeeClick = () => {
 		setShowUsersList(!showUsersList);
 	};
+	const handleListClose = () => {
+		setShowUsersList(false);
+	};
 
 	async function handle(): Promise<User> {
 		const res = await fetch('/api/registerUser/dogLov-id/' + dogLoverId + '/dogSid/' + dogSitId);
@@ -97,7 +100,7 @@ export default function ButtonsUsers(): JSX.Element {
 			) : (
 				<div className={s.listContSec}>
 					<section id={s.listSection}>
-						<UsersList />
+						<UsersList onClose={handleListClose} />
 					</section>
 				</div>
 			)}

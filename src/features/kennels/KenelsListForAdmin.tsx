@@ -7,7 +7,11 @@ import s from '../../components/Pages/Kennel/Kennels.module.css';
 import KennelEditForm from './KennelEditForm';
 import { useNavigate } from 'react-router-dom';
 
-export default function KennelsListForAdmin(): JSX.Element {
+interface UsersListProps {
+  onClose: () => void;
+}
+
+export default function KennelsListForAdmin({ onClose }: UsersListProps): JSX.Element {
 	const kennels = useAppSelector(selectKennels);
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
@@ -22,11 +26,16 @@ export default function KennelsListForAdmin(): JSX.Element {
 		setIsListOpen(!isListOpen);
 	};
 
-	const handleClickClosed = (): void => {
-		// setIsListOpen(false);
-		navigate('/');
-	};
+	// const handleClickClosed = (): void => {
+	// 	// setIsListOpen(false);
+	// 	navigate('/');
+	// };
 
+	const handleClickClosed = (): void => {
+    setIsListOpen(false);
+    onClose();
+  };
+	
 	const startIndex = (page - 1) * itemsPerPage;
 	const endIndex = page * itemsPerPage;
 	const currentKennels = kennels.slice(startIndex, endIndex);
