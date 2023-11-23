@@ -18,6 +18,9 @@ function ButtonsKennel() {
 	const handleCreateFormClose = () => {
 		setShowCreateForm(false);
 	};
+	const handleListClose = () => {
+		setShowKennels(false);
+	};
 
 	return (
 		<>
@@ -30,7 +33,7 @@ function ButtonsKennel() {
 			) : (
 				<div className={s.listContSec}>
 					<section id={s.listSection}>
-						<KennelsListForAdmin />
+						<KennelsListForAdmin onClose={handleListClose} />
 					</section>
 				</div>
 			)}

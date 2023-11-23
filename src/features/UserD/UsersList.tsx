@@ -4,7 +4,11 @@ import { selectUsers } from './selectors';
 import { loadUsers } from './usersSlice';
 import s from '../../features/Features.module.css';
 
-export default function UsersList(): JSX.Element {
+interface UsersListProps {
+  onClose: () => void;
+}
+
+export default function UsersList({ onClose }: UsersListProps): JSX.Element {
   const users = useAppSelector(selectUsers);
   const dispatch = useAppDispatch();
   const [isListOpen, setIsListOpen] = useState(false);
@@ -19,6 +23,7 @@ export default function UsersList(): JSX.Element {
 
   const handleClickClosed = (): void => {
     setIsListOpen(false);
+    onClose();
   };
 
   const startIndex = (page - 1) * itemsPerPage;

@@ -103,6 +103,15 @@ ftCopyRight {
     transition: 0.5s;
 
 }
+.ait {
+  display: flex;
+ color: white;
+ /* text-shadow: 2px 2px 4px white; */
+ 
+}
+.imgait {
+  width: 65px;
+}
 @media (max-width: 1000px) {
     .container {
       flex-direction: column;

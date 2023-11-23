@@ -6,6 +6,7 @@ import instagram from './img/instagram.svg';
 import facebook from './img/facebook.svg';
 import envelope from './img/envelope.svg';
 import youtube from './img/youtube.svg';
+import ait from './img/ait.png';
 
 const Futer = (): JSX.Element => {
 	return (
@@ -81,7 +82,18 @@ const Futer = (): JSX.Element => {
 						<a href="#">Eine fragen stelen</a>
 					</div>
 				</div>
+				
 			</div>
+			<div className={styles.ait}>
+					<div className={styles.picA}>
+						<img src={ait} alt="" className={styles.imgait} />
+					</div>
+				<div className={styles.descA}>
+					<h1>AIT</h1>
+					<p>Hi-tech team</p>
+					<p>Das Diplomprojekt wurde von Absolventen durchgeführt und von der AIT School of Programming unterstützt</p>
+				</div>
+				</div>
 			<div className={styles.ftCopyRight}>
 				<p>2023 &copy; Petscare alle Rechte vorbehalten</p>
 			</div>

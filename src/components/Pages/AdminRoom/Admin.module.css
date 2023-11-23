@@ -6,7 +6,7 @@
 .admin_flex {
 	display: flex;
 	flex-direction: column;
-	/* background-image: url('./images/admin.jpg'); */
+	background-image: url('./images/elevated2.jpg');
 	background-image-opacity: 0.5;
 	/* opacity: 0.5; */
 	background-repeat: repeat-y;

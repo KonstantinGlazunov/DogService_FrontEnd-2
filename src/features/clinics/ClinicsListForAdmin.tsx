@@ -7,7 +7,12 @@ import ClinicEditForm from './ClinicEditForm';
 import s from '../Features.module.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function ClinicsListForAdmin(): JSX.Element {
+interface UsersListProps {
+  onClose: () => void;
+}
+
+
+export default function ClinicsListForAdmin({ onClose }: UsersListProps): JSX.Element {
 	const clinics = useAppSelector(selectClinics);
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
@@ -23,10 +28,14 @@ export default function ClinicsListForAdmin(): JSX.Element {
 	};
 
 	const handleClickClosed = (): void => {
-		// setIsListOpen(false);
-		navigate('/Admin');
-		console.log('test');
-	};
+    setIsListOpen(false);
+    onClose();
+  };
+	// const handleClickClosed = (): void => {
+	// 	// setIsListOpen(false);
+	// 	navigate('/Admin');
+	// 	console.log('test');
+	// };
 
 	const startIndex = (page - 1) * itemsPerPage;
 	const endIndex = page * itemsPerPage;
