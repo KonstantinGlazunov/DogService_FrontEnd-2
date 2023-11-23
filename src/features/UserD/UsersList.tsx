@@ -21,7 +21,7 @@ export default function UsersList(): JSX.Element {
     setIsListOpen(false);
   };
 
-const startIndex = (page - 1) * itemsPerPage;
+  const startIndex = (page - 1) * itemsPerPage;
 	const endIndex = page * itemsPerPage;
 	const currentAllUsers = users.slice(startIndex, endIndex);
 

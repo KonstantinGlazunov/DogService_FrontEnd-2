@@ -1,9 +1,10 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable react/react-in-jsx-scope */
+
 import './App.css';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { useEffect } from 'react';
 import { getUser } from './features/auth/authSlice';
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Login from './features/auth/Login';
 import Register from './features/auth/Register';
@@ -18,6 +19,7 @@ import Contacts from './components/Pages/Contacts/Contacts';
 import Clinics from './components/Pages/Clinics/Clinics';
 import Kennels from './components/Pages/Kennel/Kennels';
 import Admin from './components/Pages/AdminRoom/Admin';
+import ButtonsClinic from './components/Pages/AdminRoom/Clinics/ButtonsClinic';
 
 function App(): JSX.Element {
 	const dispatch = useAppDispatch();
@@ -49,6 +51,7 @@ function App(): JSX.Element {
 					<Route path="kennels" element={<Kennels />} />
 					<Route path="contact" element={<Contacts />} />
 					<Route path="admin" element={<Admin />} />
+					<Route path="buttonsClinic" element={<ButtonsClinic />} />
 					{/* <Route path="tasks" element={<AdminCabinet />} /> */}
 				</Route>
 			</Routes>
