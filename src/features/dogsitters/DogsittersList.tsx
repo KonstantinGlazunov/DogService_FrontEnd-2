@@ -51,14 +51,6 @@ export default function DogsittersList(): JSX.Element {
 
 	const user = useAppSelector(selectUser);
 
-	// const im = function img() {
-	// 	if (imeg === 1) {
-	// 		imeg = 2;
-	// 	} else if (imeg === 2) {
-	// 		imeg = 3;
-	// 	}
-	// };
-
 	async function handle(): Promise<User> {
 		const dogLoverId = user?.id;
 
@@ -86,8 +78,6 @@ export default function DogsittersList(): JSX.Element {
 		);
 	}
 
-	// <img className="d-block w-100" src="../images/img1.png" alt="dog_1" />;
-
 	return (
 		<>
 			<div className={s.dogsittersListContainer}>
@@ -100,11 +90,6 @@ export default function DogsittersList(): JSX.Element {
 							</div>
 
 							<div className={s.wrap}>
-								{/* <div>
-									<span className={s.bolddd}> Name:</span>
-									<span className={s.bolddd}>Stadt: </span>
-									<span className={s.bolddd}> E-mail:</span>
-								</div> */}
 								<div className={s.data}>
 									<p>
 										<span className={s.bolddd}> Name:</span>
@@ -145,7 +130,7 @@ export default function DogsittersList(): JSX.Element {
 						className={s.paginationButton}
 						onClick={() => {
 							handlePageChange(currentPage - 1);
-							imeg > 0 ? imeg-- : (imeg = 3);
+							imeg > 0 ? imeg-- : (imeg = 5);
 							per2 = imeg + '';
 
 							per = per1 + per2;
@@ -158,9 +143,8 @@ export default function DogsittersList(): JSX.Element {
 					<button
 						className={s.paginationButton}
 						onClick={() => {
-							//imeg = 0;
 							handlePageChange(currentPage + 1);
-							imeg < 3 ? imeg++ : (imeg = 0);
+							imeg < 5 ? imeg++ : (imeg = 0);
 							per2 = imeg + '';
 
 							per = per1 + per2;
