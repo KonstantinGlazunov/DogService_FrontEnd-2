@@ -7,7 +7,12 @@
 	font-size: 24px;
 	/* border: #15bbde solid 5px; */
 	margin-right: 10px;
-	text-align: center;
+	/* text-align: center; */
+	align-content: space-between;
+}
+
+.dogs_text img {
+	height: 80%;
 }
 .wrap {
 	display: flex;
@@ -15,32 +20,58 @@
 	height: 400px;
 	justify-content: center;
 	align-items: center;
-	border: #de1526 solid 2px;
+	/* border: #de1526 solid 2px; */
 }
 
 .ds {
 	width: 100%;
 	height: 50px;
 }
+
+.ds h4 {
+	color: #046104;
+	text-align: center;
+	font-weight: bold;
+}
 .data {
 	width: 49%;
 	height: 350px;
-	border: #242222 solid 2px;
+	margin-top: 50px;
+	/* border: #242222 solid 2px; */
+}
+
+.data button {
+	margin-top: 90px;
+	margin-left: 100px;
+	width: 150px;
 }
 
 .foto {
 	width: 49%;
 	height: 350px;
-	border: #155bde solid 2px;
+	/* border: #155bde solid 2px; */
 }
 
+.bolddd {
+	font-size: 24px;
+	font-weight: bold;
+	color: #ec0052;
+	margin-right: 29px;
+}
+
+.bold7 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #ec0052;
+	margin-right: 43px;
+}
 .dogsnone {
 	display: none;
 }
 
 .dogsittersListTitle {
 	text-align: center;
-	color: #15bbde;
+	color: #01171b;
 }
 
 .dogsittersList {
@@ -55,8 +86,8 @@
 .dogsitterItem {
 	width: 45%;
 	margin: 10px auto; /* Center the element horizontally with top and bottom margin */
-	background-color: #f9f9f9;
-	border: 2px solid #15bbde;
+	background-color: #fbfaf5;
+	border: 2px solid #222324;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
@@ -85,4 +116,109 @@
 }
 .paginationPage {
 	font-size: large;
+}
+
+@media screen and (max-width: 1670px) {
+	.dogsitterItem {
+		width: 55%;
+	}
+}
+
+@media screen and (max-width: 1495px) {
+	.dogsitterItem {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 1268px) {
+	.dogsitterItem {
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 1175px) {
+	.dogsitterItem {
+		width: 67%;
+	}
+}
+
+@media screen and (max-width: 1141px) {
+	.dogsitterItem {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 1096px) {
+	.dogsitterItem {
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 1027px) {
+	.dogsitterItem {
+		width: 78%;
+	}
+}
+
+@media screen and (max-width: 983px) {
+	.dogsitterItem {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 966px) {
+	.dogsitterItem {
+		width: 87%;
+	}
+}
+
+@media screen and (max-width: 894px) {
+	.dogsitterItem {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 871px) {
+	.dogsitterItem {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 866px) {
+	.dogsitterItem {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 785px) {
+	.dogsitterItem {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 711px) {
+	.dogsitterItem {
+		width: 100%;
+	}
+
+	.wrap {
+		flex-wrap: wrap;
+		height: 520px;
+	}
+	.data {
+		width: 350px;
+		height: 122px;
+		margin-top: 50px;
+		/* border: #242222 solid 2px; */
+	}
+
+	.foto {
+		width: 350px;
+		height: 350px;
+		/* border: #155bde solid 2px; */
+	}
+
+	.data button {
+		margin-top: 305px;
+	}
 }

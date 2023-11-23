@@ -8,26 +8,22 @@ import { useEffect, useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { selectUser } from '../auth/selectors';
 import User from '../auth/types/User';
-import img from './images/img1.png';
-import imgD1 from './images/img.png';
-import imgD2 from './images/img2.png';
-import imgD3 from './images/img3.png';
-// import imgD4 from './images/img4.png';
-// import imgD5 from './images/img5.png';
+import img from './images/avatar7.jpg';
+import img1 from './images/avatar6.jpg';
+//import img2 from './images/avatar2.jpg';
+import img3 from './images/avatar3.jpg';
+import img4 from './images/avatar4.jpg';
+import img5 from './images/avatar5.jpg';
+import img6 from './images/avatar1.jpg';
 
 // const images = [imgD1, imgD2, imgD3, imgD4, imgD5];
-const images = [img, imgD1, imgD2, imgD3];
+const images = [img, img6, img3, img4, img5, img1];
 
-const dogSitId = 0;
-const dogSitFirstName = '';
+let dogSitId = 0;
+let dogSitFirstName = '';
 let imeg = 0;
 
 const adres1 = '';
-
-//console.log(imeg);
-
-const img1 = 'hgsjhgahshgjashjhj';
-const img2 = 'hgsjhgahshgjashjhj';
 
 let per = '';
 
@@ -102,16 +98,38 @@ export default function DogsittersList(): JSX.Element {
 							<div className={s.ds}>
 								<h4>BEREIT, ZEIT MIT IHREM HUND ZU VERBRINGEN</h4>
 							</div>
+
 							<div className={s.wrap}>
+								{/* <div>
+									<span className={s.bolddd}> Name:</span>
+									<span className={s.bolddd}>Stadt: </span>
+									<span className={s.bolddd}> E-mail:</span>
+								</div> */}
 								<div className={s.data}>
 									<p>
+										<span className={s.bolddd}> Name:</span>
 										<span className={s.dogs_text}> {dogsitter.firstName}</span>
 										<span className={s.dogs_text}> {dogsitter.lastName}</span>
 									</p>
 
-									<p className={s.dogs_text}>{dogsitter.city}</p>
-									<p className={s.dogs_text}>{dogsitter.email}</p>
+									<p className={s.dogs_text}>
+										<span className={s.bold7}> Stadt:</span>
+										{dogsitter.city}
+									</p>
+									<p className={s.dogs_text}>
+										<span className={s.bolddd}> E-mail:</span>
+										{dogsitter.email}
+									</p>
+
+									<Button variant="warning" onClick={handle}>
+										WÄHLEN
+									</Button>
+									<span className={s.dogsnone}>
+										{(dogSitId = dogsitter.id)}
+										{(dogSitFirstName = dogsitter.firstName)}
+									</span>
 								</div>
+
 								<div className={s.foto}>
 									<span className={s.dogs_text}>
 										{' '}
@@ -125,7 +143,13 @@ export default function DogsittersList(): JSX.Element {
 				<div className={s.pagination}>
 					<button
 						className={s.paginationButton}
-						onClick={() => handlePageChange(currentPage - 1)}
+						onClick={() => {
+							handlePageChange(currentPage - 1);
+							imeg > 0 ? imeg-- : (imeg = 3);
+							per2 = imeg + '';
+
+							per = per1 + per2;
+						}}
 						disabled={currentPage === 1}
 					>
 						Prev.
@@ -138,10 +162,7 @@ export default function DogsittersList(): JSX.Element {
 							handlePageChange(currentPage + 1);
 							imeg < 3 ? imeg++ : (imeg = 0);
 							per2 = imeg + '';
-							//console.log(imeg);
-							//console.log(per1);
-							//console.log(per2);
-							//console.log(per);
+
 							per = per1 + per2;
 						}}
 						disabled={currentPage === totalPages}
