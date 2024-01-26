@@ -7,7 +7,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 		return {
 			plugins: [react()],
 			server: {
-				open: true,
+				open: false,
 				proxy: {
 					'/api': {
 						target: 'http://localhost:8080',
@@ -30,7 +30,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 		return {
 			plugins: [react()],
 			server: {
-				open: true,
+				open: false,
 				proxy: {
 					'/api': {
 						target: '/',
