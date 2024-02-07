@@ -10,9 +10,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				open: false,
 				proxy: {
 					'/api': {
-						target: '/back', // Замените на фактический адрес и порт вашего бэкенда
-						changeOrigin: true, // Для изменения происхождения запросов
-						rewrite: (path) => path.replace(/^\/api/, ''), // Для удаления '/api' из пути
+						target: 'http://localhost:8080',
 					},
 				},
 			},
@@ -35,7 +33,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				open: false,
 				proxy: {
 					'/api': {
-						target: '/',
+						target: '/back', // Замените на фактический адрес и порт вашего бэкенда
+						changeOrigin: true, // Для изменения происхождения запросов
+						rewrite: (path) => path.replace(/^\/api/, ''), // Для удаления '/api' из пути
 					},
 				},
 			},
