@@ -33,7 +33,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				open: false,
 				proxy: {
 					'/api': {
-						target: '/back/',
+						target: '/',
 					},
 				},
 			},
