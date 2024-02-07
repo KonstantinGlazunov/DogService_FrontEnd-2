@@ -10,7 +10,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 				open: false,
 				proxy: {
 					'/api': {
-						target: 'http://localhost:8080',
+						target: '/back', // Замените на фактический адрес и порт вашего бэкенда
+						changeOrigin: true, // Для изменения происхождения запросов
+						rewrite: (path) => path.replace(/^\/api/, ''), // Для удаления '/api' из пути
 					},
 				},
 			},
