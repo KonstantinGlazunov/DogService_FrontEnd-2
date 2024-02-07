@@ -7,7 +7,7 @@ export async function getAll(): Promise<Kennel[]> {
 }
 
 export async function getByCity(city: string): Promise<Kennel[]> {
-	const res = await fetch(`/api/kennels/byCities?city=${city}`);
+	const res = await fetch(`/back/api/kennels/byCities?city=${city}`);
 	return res.json();
 }
 

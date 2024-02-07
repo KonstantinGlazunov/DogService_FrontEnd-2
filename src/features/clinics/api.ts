@@ -7,7 +7,7 @@ export async function getAll(): Promise<Clinic[]> {
 }
 
 export async function getByCity(city: string): Promise<Clinic[]> {
-	const res = await fetch(`/api/clinics/byCities?city=${city}`);
+	const res = await fetch(`/back/api/clinics/byCities?city=${city}`);
 	return res.json();
 }
 
