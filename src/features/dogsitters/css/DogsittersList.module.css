@@ -5,10 +5,9 @@
 
 .dogs_text {
 	font-size: 24px;
-	/* border: #15bbde solid 5px; */
 	margin-right: 10px;
-	/* text-align: center; */
-	align-content: space-between;
+	/*align-content: space-between;*/
+	align-self: flex-start;
 }
 
 .dogs_text img {
@@ -202,12 +201,15 @@
 	}
 
 	.wrap {
-		flex-wrap: wrap;
-		height: 520px;
+		/*flex-wrap: wrap;
+		height: 520px;*/
+		display: flex;
+		align-items: flex-start;
 	}
 	.data {
 		width: 350px;
-		height: 122px;
+		height: auto;
+		/*height: 122px;*/
 		margin-top: 50px;
 		/* border: #242222 solid 2px; */
 	}
