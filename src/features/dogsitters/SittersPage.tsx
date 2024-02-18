@@ -4,7 +4,6 @@ import { FormEvent, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import DogsittersList from './DogsittersList';
 import { loadDogsittersByCityAndSize } from './dogsittersSlice';
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import s from './css/SittersPage.module.css';
 import dogImage from './images/dog.png';
 import betrou from './images/dogErz.jpg';
@@ -110,7 +109,7 @@ function processInput(inputValue: string) {
 							<input
 								type="text"
 								className={`form-control ${error ? 'is-invalid' : ''}`}
-								placeholder="PLZ oder Ort"
+								placeholder="PLZ oder Ort z.B: Berlin oder 10400*/"
 								name="plz-or-city"
 								value={inputValue}
 								onChange={(e) => setInputValue(e.target.value)}
