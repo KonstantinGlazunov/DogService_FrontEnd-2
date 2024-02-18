@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/react-in-jsx-scope */
 import { useAppSelector } from '../../app/hooks';
 import { selectDogsitters } from './selectors';
 import s from './css/DogsittersList.module.css';
@@ -10,13 +7,11 @@ import { selectUser } from '../auth/selectors';
 import User from '../auth/types/User';
 import img from './images/avatar7.jpg';
 import img1 from './images/avatar6.jpg';
-//import img2 from './images/avatar2.jpg';
 import img3 from './images/avatar3.jpg';
 import img4 from './images/avatar4.jpg';
 import img5 from './images/avatar5.jpg';
 import img6 from './images/avatar1.jpg';
 
-// const images = [imgD1, imgD2, imgD3, imgD4, imgD5];
 const images = [img, img6, img3, img4, img5, img1];
 
 let dogSitId = 0;
@@ -35,7 +30,7 @@ per = per1 + per2;
 
 export default function DogsittersList(): JSX.Element {
 	const dogsitters = useAppSelector(selectDogsitters);
-	const itemsPerPage = 1;
+	const itemsPerPage = 3;
 	const [currentPage, setCurrentPage] = useState<number>(1);
 	const [showConf, setShowConf] = useState(false);
 	const handleCloseConf = () => setShowConf(false);

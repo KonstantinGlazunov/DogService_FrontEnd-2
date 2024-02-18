@@ -105,7 +105,7 @@ function processInput(inputValue: string) {
 					</div>
 					<div className={s.selectDate}>
 						{' '}
-						{/*PLZ oder ORT */}
+						{/*PLZ oder ORT z.B: Berlin oder 10400*/}
 						<div className={s.selectplz}>
 							<input
 								type="text"
