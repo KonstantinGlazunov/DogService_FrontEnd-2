@@ -109,7 +109,7 @@ function processInput(inputValue: string) {
 							<input
 								type="text"
 								className={`form-control ${error ? 'is-invalid' : ''}`}
-								placeholder="PLZ oder Ort z.B: Berlin oder 10400*/"
+								placeholder="PLZ oder Ort z.B: Berlin oder 10400"
 								name="plz-or-city"
 								value={inputValue}
 								onChange={(e) => setInputValue(e.target.value)}
