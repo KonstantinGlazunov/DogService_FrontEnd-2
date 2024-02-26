@@ -19,17 +19,6 @@ export default function SittersPage(): JSX.Element {
 
 	const dispatch = useAppDispatch();
 
-	/*
-	function processInput(inputValue: string) {
-		if (/^\d+$/.test(inputValue)) {
-			is a number?
-			return { zip: inputValue, city: '' };
-		} else {
-			return { zip: '', city: inputValue };
-		}
-	}
-*/
-
 function processInput(inputValue: string) {
   const letterRegex = /^[a-zA-ZäöüßÄÖÜ\s]+$/; //just letters and German
   const digitRegex = /^\d{1,5}$/; // 5 digit limit
@@ -121,7 +110,11 @@ function processInput(inputValue: string) {
 					{/* SIZE */}
 					<div className={s.selOption}>
 						<div className={s.sizeDog}>
-							<p>Sie können eine Postleitzahl oder einen Ort in die Suchleiste eingeben. Und Sie können die Stadt mit Leerzeichen betreten und es ist obligatorisch. Und es werden nur 5 Zahlenwerte akzeptiert. Das Formular akzeptiert keine leeren Abfragen, Zahlen und Buchstaben gleichzeitig oder Wörter mit Leerzeichen in der Mitte. Der Benutzer kann die Suche auch eingrenzen, indem er die Größe seines Hundes angibt.</p>
+							<p className={s.annotation}> Sie können die Stadt mit Leerzeichen betreten und dies ist
+								obligatorisch. Als Postleitzahl werden nur 5 Zahlenwerte akzeptiert. Das Formular
+								akzeptiert keine leeren Abfragen, Zahlen und Buchstaben gleichzeitig oder Wörter mit
+								Leerzeichen in der Mitte. Der Benutzer kann die Suche auch eingrenzen, indem er die
+								Größe seines Hundes angibt</p>
 							<p>Die Größe meines Hundes</p>
 							<div className={s.selectSize}>
 								<div
