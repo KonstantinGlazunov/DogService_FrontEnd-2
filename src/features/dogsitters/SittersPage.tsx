@@ -121,6 +121,7 @@ function processInput(inputValue: string) {
 					{/* SIZE */}
 					<div className={s.selOption}>
 						<div className={s.sizeDog}>
+							<p>Sie können eine Postleitzahl oder einen Ort in die Suchleiste eingeben. Und Sie können die Stadt mit Leerzeichen betreten und es ist obligatorisch. Und es werden nur 5 Zahlenwerte akzeptiert. Das Formular akzeptiert keine leeren Abfragen, Zahlen und Buchstaben gleichzeitig oder Wörter mit Leerzeichen in der Mitte. Der Benutzer kann die Suche auch eingrenzen, indem er die Größe seines Hundes angibt.</p>
 							<p>Die Größe meines Hundes</p>
 							<div className={s.selectSize}>
 								<div
